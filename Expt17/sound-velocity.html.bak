@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <title>sound-velocity</title>
+  </head>
+  <body> <a href="../index.html"><img src="../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h4>Velocity of sound in air</h4>
+    The microphone moved from 13 to 17.5<br>
+    <img style="width: 648px; height: 235px;" alt="" src="images/sound.svg"><br>
+    <br>
+    <br>
+    <img style="width: 434px; height: 440px;" alt="" src="images/sound-vel-1.jpg">&nbsp;&nbsp;
+    <img style="width: 741px; height: 441px;" alt="" src="images/sound-vel1.png"><br>
+    <br>
+    <img style="width: 445px; height: 395px;" alt="" src="images/sound-vel-2.jpg">&nbsp;&nbsp;
+    <img style="width: 698px; height: 416px;" alt="" src="images/sound-vel2.png"><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </body>
+</html>

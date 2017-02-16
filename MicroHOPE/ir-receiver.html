@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <meta name="keywords" content="expeyes, experiment, science, usb interface, engineering">
+    <title>IR receiver</title>
+  </head>
+  <body> <a href="../index.html"><img src="../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h3>Infrared Receiver</h3>
+    <p> he infrared signals emitted by the remote controls of TVs etc can be
+      captured using the TSOP1738 IR receiver. The program ir-recv.c uses an
+      interrupt sevice routine to decode this signal. The output of the chip is
+      connected to bit 2 of PORTD, as shown in the figure below.
+      Press some buttons on the remote control panel. The received number will
+      be displayed on the LCD display of microHOPE. The code ir-recv.c, can be
+      modified to work with the single byte IR transmitted from expEYES. The
+      received byte is displayed on the LCD display.
+      Dowload ir-recv.c </p>
+    <img alt="" src="images/ir-receiver.png"><span style="color: #0a0a0a;">
+      &nbsp;<img style="width: 428px; height: 367px;" alt="" src="images/ir-receive-proto.jpg"><br>
+      <br>
+    </span>
+  </body>
+</html>

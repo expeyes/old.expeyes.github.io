@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CSS tooltip example</title>
+
+<style media="screen">
+.mapcontainer{
+	position: relative;
+}
+
+.thumbnail2 img{
+border: none;
+margin: 0;
+}
+
+.thumbnail2:hover{
+background-color: transparent;
+}
+
+.thumbnail2:hover img{
+border: none;
+}
+
+.thumbnail2 span{ /*CSS for enlarged image*/
+	position: absolute;
+	padding: 0px;
+	left: -1000px;
+	border: none;
+	visibility: hidden;
+	color: black;
+	text-decoration: none;
+}
+
+.thumbnail2 span img{ /*CSS for enlarged image*/
+	border-width: 0;
+	padding: 0px;
+}
+
+.thumbnail2:hover span{ /*CSS for enlarged image*/
+	visibility: visible;
+	top: 200px;
+	left: 60px; /*position where enlarged image should offset horizontally */
+	z-index: 50;
+}
+</style>
+
+</head>
+<body>
+<div class="mapcontainer">
+<img src="../images/US_Map-alt.png" alt="Investment Portfolio" width="960" height="550" usemap="#Map" class="scalable" />
+<a class="thumbnail2"><span><img src="../images/popup_washington-cedarwillows.png" width="450" height="500" class="scalable"/>
+<map name="Map"><area shape="circle" coords="146,53,6" href="#" alt="Cedar Willows"></map></span></a>
+</div>
+</body>
+</html>
+

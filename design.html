@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <title>design of expeyes</title>
+  </head>
+  <body> <a href="index.html"><img src="images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <p>Design of ExpEYES<br>
+      <br>
+      A simplified block diagram of ExpEYES Junior is shown in the figure. The
+      sensor/control elements are connected to the micro-controller. The user
+      programs uses the Python Library to communicate to the micro-controller,
+      running a program, written in C and Assembler. The micro-controller
+      performs the control/measurement operations and sends the result back to
+      the PC. The job is divided according to the capabilities and strong points
+      of each device. The micro-controller does all the real time measurements
+      and pass on the results to the PC where Python code is used for processing
+      and displaying the data.</p>
+    <img style="width: 365px; height: 329px;" alt="" src="images/eyesjun-block.png">
+    <ul>
+      <li><a href="Code/eyesj.py">Python Library</a>, on the PC side</li>
+      <li><a href="Code/main.c">C Code</a> and&nbsp; <a href="Code/asm.s">Assembler
+          Code</a>, on the micro-controller </li>
+      <li><a href="images/eyes.pdf">Circuit Schematic</a></li>
+    </ul>
+    <p>ExpEYES-17</p>
+    <p>Circuit Schematic &amp; Layout &nbsp;&nbsp; <a href="Documents/proto1.pdf">PDF</a>&nbsp;&nbsp;
+      <a href="Documents/proto1.sch">schematic1</a> <a href="Documents/IO.sch">schematic2</a>&nbsp;
+      <a href="Documents/proto1.kicad_pcb">layout</a></p>
+    <p><a href="Documents/partslist.pdf">parts list</a></p>
+    <p>The ExpEYES-17 version has been derived from the <a href="https://github.com/jithinbp/seelab-jr">open
+        source design</a> released by <a href="http://jithinbp.in/">Jithin B P</a>.
+      The modified version is <a href="https://github.com/expeyes/expeyes-programs/tree/master/ExpEYES17/Firmware/EJV2_15DEC">HERE</a>.
+    </p>
+    <ul>
+    </ul>
+  </body>
+</html>

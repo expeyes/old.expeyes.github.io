@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <title>software</title>
+  </head>
+  <body> <a href="index.html"><img src="images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h3> ExpEYES Software</h3>
+    <p>Added on Feb-2017 : For running ExpEYES-17, download and install <a href="Documents/expeyes-5.0.0.deb">expeyes-5.0.0.deb</a>&nbsp;
+      or <a href="Documents/expeyes-5.0.0.zip">expeyes-5.0.0.zip</a> .The ISO
+      image containing the latest version of the software is <a href="www.iuac.res.in/%7Eelab/expEYES-14.04_v17.iso">HERE</a>.
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; ExpEYES software is written in Python and it should
+      run on any computer having Python interpreter (version &gt; 2.7) and
+      Python Serial library. It is included in the Debian and Ubuntu (version
+      &gt; 13.04) GNU/Linux distributions. Otherwise it can be installed from <a
+        href="http://expeyes.in/Documents/expeyes-3.1.0.deb">expeyes.deb</a>
+      file.<br>
+    </p>
+    <p>For Ubuntu versions 10.04 to 12.10 you may use <a href="Documents/expeyes-ub-10.04-4.0.0.deb">this
+        deb file</a>.</p>
+    <p> 1. The expEYES Live ISO images for DVDs and USB pendrives <br>
+      <br>
+      The fastest way to get expEYES running on your PC is to boot your computer
+      from a DVD or USB pendrive, prepared using the <a href="http://www.iuac.res.in/%7Eelab/expEYES-14.04_v16.iso">ISO
+        image</a>. The procedure to to this on MSWindows is explained <a href="http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows">here</a>.
+      Once you boot from the pen-drive, the Lubuntu desktop will appear. Start
+      the expEYES program from the Applications-&gt;Science menu. Download the
+      ISO images of the Live DVD. This ISO image is prepared from Lubuntu 14.04
+      and contains other educational resources also.<br>
+      <br>
+      3. On Other GNU/Linux Distributions<br>
+      <br>
+      Download <a href="Code/eyes-junior.zip">expeyes.zip</a> and do the
+      following:</p>
+    <p>$unzip expeyes.zip</p>
+    <p>$ cd eyes-junior</p>
+    <p>$ sudo python croplus.py</p>
+    <p>To use the device as a normal user, <a href="Code/postinst.sh">download
+        the file</a> to set the USB permissions by running.<br>
+      <br>
+      # sh postinst.sh<br>
+      <br>
+      4. On MS Windows<br>
+      <br>
+      Since the programs are written in Python, the same source code works on
+      GNU/Linux and Windows. You need to install Python Interpreter and the
+      required libraries. The USB device appears as an RS232 connection to the
+      software. The virtual COM port is established by the driver software for
+      the USB to Serial converter MCP2200</p>
+    <p>You need to install</p>
+    <ul>
+      <li> MCP2200 Driver</li>
+      <li>Python Interpreter version 2.7xx</li>
+      <li>Python Serial module</li>
+      <li>Python TkInter module</li>
+      <li>Python Imaging Library module</li>
+      <li>Scipy and Numpy modules</li>
+    </ul>
+    <p>Then run the program croplus.py</p>
+    <span style="font-weight: bold;">Windows version of the program</span><br>
+    A native Windows program is also available. It includes the main osciloscope
+    application and severel experiments. More details are at <a href="http://www.expeyes.herobo.com/">http://www.expeyes.herobo.com/</a><br>
+    <p> &nbsp; </p>
+    <p> </p>
+  </body>
+</html>

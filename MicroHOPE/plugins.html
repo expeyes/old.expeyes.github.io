@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <meta name="keywords" content="expeyes, experiment, science, usb interface, engineering">
+    <title>title</title>
+  </head>
+  <body> <a href="../index.html"><img src="../images/eyes-logo.png"
+        height="100" width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+
+    <h3>Plugin Modules</h3>
+    <p>Several plug-in modules are available for microhope.</p>
+    <p><span style="font-weight: bold;">Digital Output Board</span>:<br>
+      This board has 8 LEDS with series resistors. It can be plugged into any of
+      the four ports, the ground pin should be matched with that of the socket.
+      Mainly used for displaying the&nbsp; results of assembly language programs
+      and code debugging.</p>
+    <img longdesc="images/led8.jpg" alt="" src="images/led8.jpg">&nbsp; <img style="width: 588px; height: 294px;"
+      alt="" src="images/led8-schematic.png"><br>
+    <br>
+    <br>
+    <span style="font-weight: bold;">Digital Input Board</span>:<br>
+    This board has 8 switches&nbsp; with series resistors, one end connected to
+    ground. Can be used for feeding 8 bit input data to programs.<br>
+    <img style="width: 411px; height: 243px;" alt="" src="file:///home/ajith/expeyes-website/MicroHOPE/images/switch8-schematic.png"><br>
+    <br>
+    <span style="font-weight: bold;">R-2R DAC Board:</span><br>
+    An 8 bit Digital to Analog Converter (DAC) is made using an R-2R network as
+    shown in the schematic below. This can be used for generating arbitrary
+    shaped voltage waveforms under software control.<br>
+    <img style="width: 629px; height: 237px;" alt="" src="images/r2rdac-schematic.png"><br>
+    <br>
+    <span style="font-weight: bold;">Alphanumeric LCD board</span>:<br>
+    For some applications, it is necessary to have a local display. The HD44780
+    controller, or compatible IC, based LCD displays are widely available. They
+    come with a 16 pin connector and the transfer protocol is well documented
+    For details refer to . The connections between microHOPE and the LCD display
+    are shown in figure. Pins 4,5 and 7 of the LCD display are control lines,
+    connected to PC1, PC2 and PC4. The ASCII codes are transferred in the 4bit
+    mode, using pins 11 to 14 connected to PC4, PC5, PC6 and PC7. The LCD should
+    be connected to port C socket, to use the C library functions to access the
+    display.<br>
+    <img style="width: 485px; height: 296px;" alt="" src="images/lcd-display.jpg"><br>
+    <br>
+    <br>
+    <span style="font-weight: bold;">Motor Control Board:</span><br>
+    The motor control board consists of 2 H-bridges (IC L293D). Board can be
+    powered from outside or from the MicroHOPE socket. An INT/EXT jumper is
+    provided to select the power option. The voltage level at the for outputs of
+    L293 is decided by the four LSBs of the port on which it is connected. The
+    outputs (A,B,C &amp; D) can be used for controlling 2 DC motors or one
+    stepper motor.<br>
+    <br>
+    <img style="width: 311px; height: 355px;" alt="" src="images/mh-hbridge.jpg">&nbsp;&nbsp;&nbsp;
+    <img style="width: 561px; height: 355px;" alt="" src="images/H-bridge.png"><br>
+    <br>
+    <span style="font-weight: bold;">USBASP Programmer board</span>:<br>
+    &nbsp;&nbsp;&nbsp; This is an open sourced ISP (In-System Programming)
+    programmer available from <a href="http://www.fischl.de/usbasp/">http://www.fischl.de/usbasp/</a>
+    . This is provided as an accessory to MicroHOPE due to several reasons. If
+    you want to develop programs that uses the UART of Atmega32, you need to
+    upload code using ISP. It can be used for programming other AVR
+    micro-controllers also. It can be used for burning the boot loader. The LED
+    on the board indicates power. It goes off while uploading code, giving an
+    additional indication.<br>
+    <br>
+    <img style="width: 685px; height: 184px;" alt="" src="images/mh-usbasp.jpg"><br>
+    <img style="width: 679px; height: 450px;" alt="" src="images/usbasp-schematic.png"><br>
+    <br>
+    <br>
+    <br>
+    <p> </p>
+  </body>
+</html>

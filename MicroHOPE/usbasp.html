@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <meta name="keywords" content="expeyes, experiment, science, usb interface, engineering">
+    <title>usbasp</title>
+  </head>
+  <body> <a href="../index.html"><img src="../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h3>USBASP Programmer</h3>
+    <div id="node-top" class="node-top region nested"> </div>
+    <div class="content">
+      <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+        <div class="field-items">
+          <div class="field-item even" property="content:encoded">
+            <p style="text-align: justify;"><span style="font-size:14px;"><img src="images/usbasp-plugin.jpg"
+                  style="width: 400px; height: 525px; float: right; margin-left: 5px; margin-right: 5px;">Most
+                of the micro-controllers have the In-System Programming (ISP)
+                feature, implemented using three pins, Serial ClocK (SCK),
+                Master-In–Slave-Out (MISO) and Master-Out–Slave-In (MOSI). All
+                types of memory on the micro-controller can be accessed using
+                the SCK, MISO and MOSI pins, while holding the RESET pin LOW.
+                These pins, along with ground, are available on the 5 pin header
+                J7 on the microHOPE board.&nbsp; </span></p>
+            <p style="text-align: justify;"><span style="font-size:14px;">USBASP
+                is an open sourced ISP (In-System Programming) programmer
+                available from <a href="http://www.fischl.de/usbasp/">http://www.fischl.de/usbasp/</a>
+                . This is provided as an accessory to MicroHOPE due to several
+                reasons. If you want to develop programs that uses the UART of
+                Atmega32, you need to upload code using ISP. USBASP can be used
+                for programming other AVR micro-controllers also. It can be used
+                for burning the boot loader. The LED on the board indicates
+                power. It goes off while uploding code, giving an additional
+                indication.</span></p>
+            <p style="text-align: justify;"><span style="font-size:14px;">The
+                figure shows how to connect the ISP to MicroHOPE. <strong>MicroHOPE
+                  is powered by the USBASP board, using an external wire. </strong></span></p>
+            <p style="text-align: justify;"><strong><span style="color:#800000;"><span
+                    style="font-size: 14px;">Uploading via ISP interface using
+                    USBASP</span></span></strong></p>
+            <p style="text-align: justify;"><span style="font-size: 14px;">To
+                upload blink.hex, issue the command</span></p>
+            <p style="text-align: justify;"><span style="font-size:14px;">$
+                avrdude -B10 -c usbasp -patmega32 -U flash:w:blink.hex</span></p>
+            <p style="text-align: justify;"><span style="font-size:14px;">or use
+                the batch file <a href="microhope/mh-upload-usbasp.sh">mh-upload-usbasp.sh</a>
+                like</span></p>
+            <p style="text-align: justify;"><span style="font-size:14px;">$
+                ./mh-upload-usbasp.sh&nbsp; blink</span></p>
+            <p style="text-align: justify;"><span style="font-size:14px;"><strong><span
+                    style="color: rgb(128, 0, 0);">Writing the fuses and
+                    boot-loader to prepare ATmega32 to be used in MicroHOPE</span></strong></span></p>
+            <p style="text-align: justify;"><span style="font-size:14px;">avrdude
+                -B10 -c usbasp -patmega32 -U flash:w:<a href="ATmegaBOOT_168_atmega32.hex">ATmegaBOOT_168_atmega32.hex</a>&nbsp;&nbsp;&nbsp;
+                # upload hex file<br>
+                avrdude -B10 -c usbasp -patmega32 -U lfuse:w:0xff:m -U
+                hfuse:w:0xda:m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # set fuses
+                to&nbsp; 0xFF and 0xDA<br>
+                avrdude -b 19200 -P /dev/ttyACM0 -pm32 -c stk500v1
+                -n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                # verify the device on /dev/ttyACM0</span></p>
+            <p style="text-align: justify;"><span style="font-size:14px;">It is
+                easier to use the script <a href="microhope/mhbootload32-usbasp.sh">mhbootload32-usbasp.sh</a>
+                containing these commands.</span></p>
+            <hr>
+            <p style="text-align: justify;"><img src="images/usbasp-on-BB.jpg" style="width: 565px; height: 300px; float: right;"><span
+                style="font-size:14px;">You can program AVR series ICs using the
+                USBASP programmer, by connecting them as shown in the figure.
+                There are 6 external connections to the board. Groung and 5 volt
+                supply are connected by insering two wires. The remaining 4
+                connections are made using four numbers 1mm square pins,
+                one&nbsp; end to the bread board and the other to the USBASP
+                board socket.</span></p>
+            <p style="text-align: justify;"><span style="font-size:14px;">The
+                command</span></p>
+            <p style="text-align: justify;"><span style="font-size:14px;">$
+                avrdude -B10 -c usbasp -patmega32 -U flash:w:blink.hex </span></p>
+            <p style="text-align: justify;"><span style="font-size:14px;">is
+                used for uploading the code that makes an LED connected to PB0
+                blink.</span></p>
+            <p style="text-align: justify;"><br>
+              <span style="font-size:14px;"></span></p>
+            <p style="text-align: justify;"><br>
+              <span style="font-size:14px;"></span></p>
+            <p style="text-align: justify;"><span style="font-size:14px;"><br>
+              </span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

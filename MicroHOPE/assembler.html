@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <meta name="keywords" content="expeyes, experiment, science, usb interface, engineering">
+    <title>Assembler</title>
+  </head>
+  <body> <a href="../index.html"><img src="../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h1 class="title">Programming ATmega32 in assembly</h1>
+    <div id="node-top" class="node-top region nested"> </div>
+    <p style="text-align: justify;"><span style="font-size:14px;"><img src="images/microhope-led8.jpg"
+          style="width: 366px; height: 279px; float: right; margin: 5px;">To
+        code in assembler, one should have some idea about the architecture of
+        the target hardware. It is enough to assume that the AVR
+        micro-controller appears to the programmer as a set of General Purpose
+        Registers (GPRs: R1 to R31), Special Functions Registers (SFRs) that
+        controls the peripherals, some data memory (2kbytes of SRAM for
+        Atmega32). All of them are in the data address space. We also have
+        Program memory and EEPROM in different address spaces.&nbsp;</span></p>
+    <p style="text-align: justify;"><span style="font-size:14px;">Assembly
+        language programming involves moving data between&nbsp; GPRs, SFRs and
+        RAM, and performing arithmetic and logical operations on the data. </span></p>
+    <p style="text-align: justify;"><span style="color:#b22222;"><span style="font-size: 14px;">We
+          have four I/O ports (A,B,C and D,&nbsp; controlled by 12 SFRs) that
+          can be used for providing input data to our programs and display the
+          output. In order to do that, we need to use switches and LEDs
+          connected to these ports. The following examples use the Digital
+          Output Board (having 8 LEDs) to display program results. The figure
+          shows the board plugged into port B.</span></span></p>
+    <p><span style="font-size:14px;">Let us start with a small program shown
+        below (<a href="microhope/ASM/immed.S"><strong>immed.S</strong></a> is
+        included in the examples provided.)</span></p>
+    <address><span style="font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        .section .text&nbsp;&nbsp;&nbsp; ; denotes code section<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .global main<br>
+        main:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; ldi r16, 255&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;
+        load r16 with 255<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; out 0x17, r16&nbsp; ; send R16 to DDRB using
+        I/O address<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; out 0x18, r16&nbsp; ; and to PORTB also<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; .end</span></address>
+    <p><span style="font-size:14px;">Clicking on 'Assemble' and then 'Upload'
+        should make all the LED light up.</span></p>
+    <p><span style="font-size:14px;"><strong>General Purpose Registers</strong></span></p>
+    <p style="text-align: justify;"><span style="font-size:14px;">We are already
+        familiar with the Special Function Registers (including DDRB and PORTB)
+        that were used to configure and control various features of the
+        microcontroller. In addition to these ATmega32 has 32 general purpose
+        registers (32 here is a coincidence. The 32 in ATmega32 refers to 32 kB
+        of flash memory available for programming. All AVR micro-controllers,
+        even ATmega8 or ATmega16 have 32 GPRs). </span></p>
+    <p style="text-align: justify;"><span style="font-size:14px;">Any numerical
+        value that needs to be used in the program needs to be first loaded into
+        one of the GPRs. So, if you want to load 0xff into DDRB, you first need
+        to load 0xff into a GPR and then copy the content of the GPR into DDRB.
+        This might seem like an unnecessary restriction to us who have been used
+        to writing DDRB=0xff in C, but it is a necessary consequence of the
+        streamlined hardware design of the processor which C hides from us.</span></p>
+    <p style="text-align: justify;"><span style="font-size:14px;">Even though
+        the 32 registers R0-31 are called "general purpose", there are special
+        uses for some of them, which will be discussed later. </span></p>
+    <p><span style="font-size:14px;"><strong>Instructions</strong></span></p>
+    <p><span style="font-size:14px;">What we could do intuitively with an
+        assignment operator (=) in C requires the use of more than one
+        instruction. </span></p>
+    <p><span style="font-size:14px;"><strong>LDI</strong> (Load Immediate) :
+        used to load a constant value to one of the registers R16-31 ( that's a
+        restriction. load immediate can't work with R1 ro R15)</span></p>
+    <p><span style="font-size:14px;"><strong>OUT</strong> (output to any Special
+        Function Register) :&nbsp; The SFRs are mapped to the locations 0 to
+        3Fhex. 0x17 and 0x18 are the I/O mapped addresses of the registers DDRB
+        and PORTB respectively. </span></p>
+    <p><span style="font-size:14px;">The SFRs are also mapped into the memory
+        space to locations 20hex to 5Fhex. Due to this reason you can use&nbsp;
+        <strong>STS</strong> (Store Direct to SRAM) instruction instead of <strong>OUT</strong>
+        but to a different address.&nbsp; <strong>OUT&nbsp; 0x17, R16</strong>&nbsp;&nbsp;
+        and&nbsp; <strong>STS&nbsp; 0x37, R16</strong>&nbsp; achieves the same
+        result but the former is compact.</span></p>
+    <p><span style="font-size:14px;"><span style="color: rgb(128, 0, 0);"><strong>Adding
+            two numbers</strong></span></span></p>
+    <p><span style="font-size:14px;">The code listed below (add.S) adds two
+        numbers and displays the result on the LEDs connected to port B.<span style="color:#a52a2a;">
+          Instead of remembering the addresses of DDRB and PORTB, we have
+          included the file 'avr/io.h' that contains all the Register names.
+          Naming the program with <strong>.S</strong> (capital S instead of
+          small s<strong> )</strong> invokes the pre-processor</span>, that also
+        allows expressions like (1 &lt;&lt; PB3) to be used</span>. (<a href="microhope/ASM/add.S">add.S</a>)</p>
+    <p><span style="font-size:14px;">#include &lt;avr/io.h&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .section .text&nbsp;&nbsp;&nbsp; ;
+        denotes code section<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .global main<br>
+        main:<br>
+        &nbsp; &nbsp;&nbsp; LDI&nbsp;&nbsp;&nbsp;&nbsp; R16,
+        255&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; load R16 with 255<br>
+        &nbsp;&nbsp; &nbsp; STS&nbsp;&nbsp;&nbsp; DDRB, R16&nbsp;&nbsp;&nbsp; ;
+        set all bits of port B as output<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; LDI&nbsp;&nbsp;&nbsp; R16,
+        2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; load R16 with 2<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; LDI&nbsp;&nbsp;&nbsp; R17,
+        4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; load R17 with 4<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; ADD&nbsp; R16, r17&nbsp;&nbsp;&nbsp; ; R16
+        &lt;- R16 + R17<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; STS&nbsp;&nbsp;&nbsp; PORTB,
+        R16&nbsp;&nbsp;&nbsp; ; result to port B<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; .END</span></p>
+    <p><span style="font-size:14px;">Running this program lights LEDs D2 and D3.
+      </span></p>
+    <p><span style="font-size:14px;"><span style="color: rgb(128, 0, 0);"><strong>The
+            Status Register</strong></span></span></p>
+    <p><span style="font-size:14px;">Arithmetic and logical operations will
+        affect the status flag bits like Carry, Zero, Negative etc. Refer to
+        Atmega32 databook for complete information.</span></p>
+    <p><span style="font-size:14px;"><img src="images/avr-sreg.png" style="width: 500px; height: 74px;"></span></p>
+    <address><span style="font-size:14px;">Bit 0 : Carry</span></address>
+    <address><span style="font-size:14px;">Bit 1 : Zero</span></address>
+    <address><span style="font-size:14px;">Bit 2 : Negative</span></address>
+    <address><span style="font-size:14px;">Bit 3 : Two's complement overflow</span></address>
+    <address><span style="font-size:14px;">Bit 4 : Sign bit, exclusive OR of N
+        and V</span></address>
+    <address><span style="font-size:14px;">Bit 5 : Half Carry</span></address>
+    <p><span style="font-size:14px;">Let us modify the previous program to
+        evaluate 255 + 1. The result will be shown on port B and&nbsp; the
+        status flag register SREG on port A. </span>(<a href="microhope/ASM/carry.S">carry.S</a>)</p>
+    <p><span style="font-size:14px;">#include &lt;avr/io.h&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .section .text&nbsp;&nbsp;&nbsp; ;
+        denotes code section<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .global main<br>
+        main:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; LDI&nbsp;&nbsp;&nbsp;&nbsp; R16,
+        255&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; STS&nbsp;&nbsp;&nbsp; DDRB, R16&nbsp;&nbsp;
+        &nbsp;&nbsp; ; All bits of port B as output<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; STS&nbsp;&nbsp;&nbsp; DDRA, R16&nbsp;&nbsp;
+        &nbsp;&nbsp; ; All bits of port A as output<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; LDI&nbsp;&nbsp;&nbsp; R17,
+        1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        ; load R17 with 1,&nbsp; R16 already has 255<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; ADD&nbsp; R16,&nbsp;
+        R17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; ; R16 &lt;- R16 + r17<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; STS&nbsp;&nbsp;&nbsp; PORTB,
+        R16&nbsp;&nbsp;&nbsp;&nbsp; ; Sum to port B<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; LDS&nbsp;&nbsp; R16,
+        SREG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; Load the Status
+        register<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; STS&nbsp;&nbsp;&nbsp; PORTA,
+        R16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; display it on port A<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; .END</span></p>
+    <p><span style="font-size:14px;">The Carry, Zero and Half Carry bits will be
+        set on port B.&nbsp; </span></p>
+    <p><span style="font-size:14px;">Exercise 1: Load R16 and R17 with two
+        numbers and study the results and status flags generated by the
+        following operations.</span></p>
+    <address><span style="font-size:14px;">COM&nbsp;&nbsp; R16&nbsp;&nbsp;&nbsp;
+        ; Complement</span></address>
+    <address><span style="font-size:14px;">NEG&nbsp;&nbsp; R16&nbsp;&nbsp;&nbsp;
+        ; 2's complement</span></address>
+    <address><span style="font-size:14px;">TST&nbsp;&nbsp;&nbsp;
+        R16&nbsp;&nbsp;&nbsp; ; test for zero or minus</span></address>
+    <address><span style="font-size:14px;">AND&nbsp; R16, R17&nbsp;&nbsp; ;
+        bitwise AND</span></address>
+    <address><span style="font-size:14px;">OR&nbsp;&nbsp;&nbsp; R16,
+        R17&nbsp;&nbsp; ; bitwise OR</span></address>
+    <address>
+      <address><span style="font-size:14px;">ADD&nbsp; R16, R17&nbsp;&nbsp; ;
+          summing</span></address>
+    </address>
+    <address><span style="font-size:14px;">Exercise 2: Add a number and it's 2's
+        complement, do the same with 1's complement and compare the results</span>
+      <address>
+        <address>
+          <address><span style="font-size:14px;">LDI&nbsp; &nbsp; &nbsp; R16, 10
+              &nbsp;&nbsp; ; load number</span></address>
+          <address>
+            <address><span style="font-size:14px;">MOV &nbsp; R17, R16&nbsp;</span></address>
+          </address>
+        </address>
+        <address><span style="font-size:14px;">NEG&nbsp;&nbsp;
+            R16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; ; 2's
+            complement</span></address>
+        <address><span style="font-size:14px;">ADD&nbsp; R17, R16&nbsp;&nbsp;</span></address>
+        <p><span style="font-size:14px;"><strong><span style="color: rgb(128, 0, 0);">Moving
+                Data</span></strong></span></p>
+        <p><span style="font-size:14px;">To manipulate data, we need to bring
+            them into the GPRs (R1 to R31) and the results should be put back
+            into the memory locations. There are different modes of&nbsp;
+            transferring data between the GPRs and the memory locations, as
+            explained below.</span></p>
+        <p><span style="font-size:14px;">Register Direct:&nbsp; MOV&nbsp; R1,
+            R2&nbsp; ; copies R2 to R1 . Two GPRs are involved in this. There
+            are also operations that involves a single register like, INC R1</span></p>
+        <p><span style="font-size:14px;">I/O Direct : For moving data between
+            the GPRs and the SFRs, since the SFRs can be accessed as I/O
+            addresses. OUT&nbsp; 0x17, R1&nbsp; copies R1 to DDRB. Please note
+            that the I/O address is 20hex less than the memory mapped address
+            (0x37) of the same SFR.</span> (<a href="microhope/ASM/io-direct.S">io-direct.S<span
+              style="color: #0a0a0a;"></span></a>)</p>
+        <p><span style="font-size:14px;">Immediate : This mode can be used for
+            transferring a number to any register from R16 to R31, like :
+            LDI&nbsp;&nbsp; R17, 200. The data is provided as a part of the
+            instruction. </span>(<a href="microhope/ASM/immed.S">immed.S</a>)</p>
+        <p><span style="font-size:14px;">Data Direct: In this mode, the address
+            of the memory location containing the data is specified, instead of
+            the data itself. LDS&nbsp; R1, 0x60 moves the content of memory
+            location 0x60 to R1. STS 0x61, R1 copies R1 to location 0x61.</span>
+          (<a href="microhope/ASM/data-direct.S">data-direct.s</a>)</p>
+        <p><span style="font-size:14px;">Data Indirect : In the previous mode,
+            the address of the memory location is part of the instruction word.
+            Here the address of the memory location is taken from the contents
+            of the X, Y or Z registers. X, Y and Z are 16 bit registers made by
+            combining two 8 bit registers (X is R26 and R27; Y is R28 and R29; Z
+            is R30 and R31. This is required for addressing memory above 255. </span>(<a
+            href="microhope/ASM/data-indirect.S">data-indirect.s</a>)</p>
+        <address><span style="font-size:14px;">LDI&nbsp; R26, 0x60&nbsp;&nbsp; ;
+            address of location 0x0060 to X</span></address>
+        <address><span style="font-size:14px;">LDI&nbsp; R27, 0x00</span></address>
+        <p> <span style="font-size:14px;">LD &nbsp; R16,
+            X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; load R16 with
+            the content of memory location pointed to by X</span></p>
+        <p><span style="font-size:14px;">This mode has several variations like
+            pre and post incrementing of the register or adding an offset to it.
+            Refer to the data book for details.</span></p>
+        <p><span style="font-size:14px;"><span style="color: rgb(128, 0, 0);"><strong>Programs
+                having Data</strong></span></span></p>
+        <p><span style="font-size:14px;">Programs generally have variables,
+            sometimes with initialized data. The expects them inside the .data
+            segment. The following example shows how to access a data variable
+            using direct and indirect modes. (<a href="microhope/ASM/data-indirect-var.S">data-direct-var.S</a>)</span></p>
+      </address>
+      <address><span style="font-size:14px;">#include &lt;avr/io.h&gt;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .section
+          .data&nbsp;&nbsp;&nbsp; ; data section starts here<br>
+          var1:&nbsp;&nbsp; .byte&nbsp;
+          0xEE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; initialized
+          global variable var1</span></address>
+      <address><span style="font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          .section .text&nbsp;&nbsp;&nbsp; ; code section<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          .global&nbsp;&nbsp;&nbsp; __do_copy_data&nbsp;&nbsp;&nbsp; ;
+          initialize global variables<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          .global&nbsp;&nbsp;&nbsp;&nbsp; __do_clear_bss&nbsp;&nbsp;&nbsp;&nbsp;
+          ; and setup stack pointer<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .global
+          main<br>
+          main:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDS&nbsp;
+          R1,
+          var1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          ; load R1 using data direct mode<br>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; STS&nbsp;&nbsp; DDRA,
+          R1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          ; display R1 on port A<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          STS&nbsp;&nbsp; PORTA, R1<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          LDI&nbsp;&nbsp; R26,
+          lo8(var1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; load the lower
+          and<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          LDI&nbsp;&nbsp; R27,
+          hi8(var1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; higher bytes of
+          the address of var1 to X<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          LD&nbsp;&nbsp;&nbsp; R16,
+          X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          ; Load R16 using data-indirect mode,&nbsp; data from where X is
+          pointing to<br>
+          &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; STS&nbsp;&nbsp; DDRB,
+          R16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          ; display R16 on port B<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          STS&nbsp;&nbsp; PORTB, R16<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .end</span></address>
+    </address>
+    <p><span style="font-size: 14px;">The lines &nbsp; .global&nbsp;&nbsp;&nbsp;
+        __do_copy_data&nbsp; and &nbsp; .global&nbsp;&nbsp;&nbsp;&nbsp;
+        __do_clear_bss&nbsp; tells the assembler to insert code for initializing
+        the global variables, which is a must.</span></p>
+    <address>
+      <p><span style="font-size:14px;"><span style="color: rgb(128, 0, 0);"><strong>Jumps
+              and Calls</strong></span></span></p>
+      <p><span style="font-size:14px;">The programs written so far has an
+          execution flow from the beginning to the end, without any branching or
+          subroutine calls, generally required in all practical programs. The
+          execution flow can be controlled by CALL and JMP instructions. (<a href="microhope/ASM/call-jump.S">call-jump.S</a>)</span></p>
+      <address><span style="font-size:14px;">#include &lt;avr/io.h&gt;</span></address>
+      <address><span style="font-size:14px;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+          &nbsp; .section .text&nbsp;&nbsp;&nbsp; ; code section starts<br>
+          disp:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;
+          our&nbsp; subroutine<br>
+          &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; STS&nbsp;&nbsp;&nbsp; PORTB,
+          R1&nbsp;&nbsp;&nbsp;&nbsp; ; display R1 on port B </span></address>
+      <address><span style="font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          INC&nbsp;&nbsp;&nbsp;
+          R1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          ; increments it</span></address>
+      <address><span style="font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          RET&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          ; and return</span></address>
+      <address><span style="font-size:14px;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+          &nbsp; .global main<br>
+          main:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDI,
+          &nbsp; R16, 255<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          STS&nbsp;&nbsp; DDRB, R16<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MOV&nbsp;
+          R1, R16 </span></address>
+      <address><span style="font-size:14px;">loop:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          RCALL&nbsp; disp &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; ; relative call<br>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; CALL &nbsp;&nbsp;
+          disp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; direct
+          call&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></address>
+      <address><span style="font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          RJMP&nbsp;&nbsp;&nbsp; loop</span><br>
+        <span style="font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+          .end</span></address>
+      <address><span style="font-size:14px;">The main program calls the
+          subroutine in a loop, the data is incremented on each call. Use an
+          oscilloscope to view the voltage waveform at each LEDs.</span></address>
+      <p><span style="color:#800000;"><strong><span style="font-size: 14px;">Output
+              of the Assembler</span></strong></span></p>
+      <p style="text-align: justify;"><span style="font-size:14px;">The code we
+          write are translated by the assembler into machine language
+          instructions. Then it is passed on to the Linker to decide the
+          locations to which code and data are to be stored before executing it.
+          The code is stored into the Program memory. Even though the processor
+          starts from location zero on a reset, the linker places the addresses
+          of the interrupt vectors there, then some initialization code and
+          after that our code is placed. You can explore the .lst output to know
+          the details.</span></p>
+      <address><span style="color:#800000;"><strong><span style="font-size: 14px;">Interrupts,
+              the asynchronous Calls</span></strong></span></address>
+      <p style="text-align: justify;"><span style="font-size:14px;">There are
+          situations where the uC should respond to external events, stopping
+          the current program temporarily. This is done using Interrupts, that
+          are external signals, either from the I/O pins or from from some of
+          the peripheral devices. On receiving an interrupt signal, the
+          processor stores the current Program Counter to the memory location
+          pointed to by the Stack Pointer and jumps to the corresponding
+          interrupt vector location (For example, the processor will jump to
+          location 0x0002 (0x0004 if you count them as bytes), if external
+          interrupt pin INT0 is activated, provided the interrupt is enabled by
+          the processor beforehand</span>.<span style="font-size: 14px;"> (<a href="microhope/ASM/interrupt.S">interrupt.S</a>).</span>
+        <span style="font-size:14px;">Connect PD2 to ground momentarily and
+          watch the LEDs.</span></p>
+      <address><span style="font-size:14px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; .section .text&nbsp;&nbsp;&nbsp; ; denotes code section</span><br>
+        &nbsp;</address>
+      <address><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; .global __vector_1 ; INT0_vect </span></address>
+      <address><span style="font-size:14px;">__vector_1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          ; Interrupt Service Routine of INT0. Called when PD2 is LOW.<br>
+          &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; INC R1</span></address>
+      <address><span style="font-size:14px;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+          OUT&nbsp;&nbsp; 0x18, R1<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          RETI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          ; return from interrupt
+          <p> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; .global main<br>
+            main:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            LDI&nbsp;&nbsp;&nbsp;&nbsp; R16, 255<br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; OUT&nbsp; 0x17,
+            R16&nbsp;&nbsp; ; DDRB<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OUT&nbsp; 0x12, R16&nbsp;&nbsp; ;
+            enable Port D pull-up resistors<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            LDI&nbsp;&nbsp;&nbsp; R16, 0x40&nbsp;&nbsp; ; enable<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OUT&nbsp;
+            0x3b, r16&nbsp;&nbsp;&nbsp; ; interrupt INT0<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLR&nbsp; R1<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            SEI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ; enable interrupts globally<br>
+            loop:<br>
+            &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; RJMP
+            loop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;
+            infinite loop<br>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; .end</p>
+        </span></address>
+    </address>
+    <p><span style="color:#800000;"><strong><span style="font-size: 14px;">A
+            Ramp Generator using R-2R DAC</span></strong></span></p>
+    <p>Connect an R-2R Digital to Analog Converter to port B, as shown below and
+      run the program <a href="microhope/ASM/ramp-on-R2RDAC.S">ramp-on-R2RDAC.S</a></p>
+    <table style="width: 500px;" border="0" cellpadding="4" cellspacing="1">
+      <tbody>
+        <tr>
+          <td><img src="images/r2rdac-schematic.png" style="width: 500px; height: 110px; float: right;"></td>
+          <td><img src="images/ramp-screenshop.png" style="width: 300px; height: 254px;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <span style="font-size:14px;"><br>
+      References:</span>
+    <address><span style="font-size:14px;"><a href="http://nongnu.org/avr-libc/user-manual/assembler.html">http://nongnu.org/avr-libc/user-manual/assembler.html</a><br>
+        <br>
+      </span></address>
+    <p><span style="font-size:14px;"> </span></p>
+  </body>
+</html>

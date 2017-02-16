@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <meta name="keywords" content="expeyes, experiment, science, usb interface, engineering">
+    <title>title</title>
+  </head>
+  <body> <a href="../index.html"><img src="../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h3>MicroHOPE Hardware</h3>
+    <p> The block diagram of the MicroHOPE hardware is shown below. ATmega32 has
+      32 General Purpose Input/Output pins, organized as 8bit wide ports A,B,C
+      and D on the 40 pin DIP package. Except for the 2 bits of Port D
+      (connected to the USB to Serial converter) all the other 30 Input/Output
+      pins are available to the user. The boot loader program is pre-loaded into
+      the flash memory of ATmega32. To load a new program, the PC resets
+      ATmega32 by sending a pulse through the RTS output of the USB to Serial
+      Converter IC (MCP2200 in the new version). The boot loader code starts
+      running after every reset, first checks for the arrival of new code via
+      the USB link. If available, it is loaded into the flash and control is
+      passed to it. If new code is not available, control is passed to the
+      existing code. Even though ATmega32 is capable of running at 16 MHz, an
+      8MHz crystal is used to reduce the power consumption and heating.The
+      Circuit Schematic is <a href="file:///home/ajith/expeyes-website/MicroHOPE/images/schematic.png">here</a>.</p>
+    <img style="width: 544px; height: 288px;" alt="" src="images/mh-block.png">
+    &nbsp;<img style="width: 516px; height: 307px;" alt="" src="images/microhope-photo-horiz.jpg"><br>
+    <br>
+    <p>All the external connections to the micro-controller are done through the
+      four external connectors. In addition to the I/O port pins, Ground and the
+      5 volt supply from USB are available on each connector.</p>
+    <p>Several plug-in boards are also available. <br>
+    </p>
+  </body>
+</html>

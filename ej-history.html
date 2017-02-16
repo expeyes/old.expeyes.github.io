@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <title>Evolution of expeyes junior</title>
+  </head>
+  <body> <a href="index.html"><img src="images/eyes-logo.png" height="100" width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="design.html"> <span>Design</span></a></li>
+        <li><a href="hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="software.html"> <span>Software</span></a></li>
+        <li><a href="android.html"> <span>Android</span></a></li>
+        <li><a href="python.html"> <span>python</span></a></li>
+        <li><a href="microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="people.html"> <span>People</span></a></li>
+        <li><a href="news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h2 class="title">Evolution of expEYES Junior</h2>
+    <div id="node-top" class="node-top region nested"> </div>
+    <p><span style="font-size:14px;">Nov-2011: expEYS was released in Mar-2011
+        and is doing reasonably well. There was no plan to develop another
+        version.</span></p>
+    <p><span style="font-size:14px;">6-Nov-2011 : <a href="http://www.aero.iitb.ac.in/%7Eprabhu/">Prabhu</a>,s
+        mail ..Looking forward to seeing you at <a href="http://scipy.in/scipyin/2011/talks-cfp/speakers/">SciPy.in
+          2011</a>.</span></p>
+    <p><span style="font-size:14px;">4-Dec-2011 : <a href="http://urtalk.kpoint.in/playlist/43/kapsule/gcc-b73217cf-469a-4c52-ad22-e2c40c88bd5d">Gave
+          a demo</a> of expEYES at Scipy.in 2011</span></p>
+    <p><span style="font-size:14px;">5-Dec-2011 : Met <a href="http://www.che.iitb.ac.in/online/node/52">Prof.
+          Kannan Moudgalya</a> and gave a demo expEYES.</span></p>
+    <p><span style="font-size:14px;">9-Dec-2011 : Prof. Kannan arranged meeting
+        with N K Sinha, Director of NMEICT project, MHRD. Talked about the
+        possibility of using expEYES with the Akash tablet PC. Shri Sinha wanted
+        something costing only few hundred rupees. Also gave a demo at their
+        committee meeting. Submitted a proposal to NMEICT for some human
+        resource to conduct expEYES training programs and attended meeting on
+        26-Dec-11.</span></p>
+    <p><span style="font-size:14px;">Even though no Android version of expEYES
+        made, the<strong> idea of a very low cost device</strong> came up. I
+        decided to explore the options for lowering the cost further. A design
+        using Atmega328, from Atmel Corp., was made, using built-in 10 bit ADC
+        and PWM DAC. PCB size reduced to 9mm x6 mm</span></p>
+    <p><span style="font-size:14px;">29-Dec-11 : PCB sent for fabrication.&nbsp;
+      </span></p>
+    <p><span style="font-size:14px;">3-Jan-12 : Sent another version of PCB for
+        fabrication. To reduce size, it replaced TC7660&nbsp; with TC1240A
+        voltage doubler.</span></p>
+    <p><span style="font-size:14px;">12-Jan-12 : Went back to TC7660 since one
+        of the TC1240A failed during continuous testing, keeping both versions.</span></p>
+    <p><span style="font-size:14px;">Tested by writing the required C and Python
+        programs, like CRO. </span></p>
+    <p><span style="font-size:14px;"><img src="images/proto-trial2.jpg" style="width: 450px; height: 232px;"></span></p>
+    <p><span style="font-size:14px;">Started looking for micro-controllers with
+        built-in USB, 12bit ADC and 2k RAM. Found PIC18F2458, from Microchip
+        Inc., having both. After contacting Microchip, it was realised that the
+        built-in USB cannot be used simultaneously with the real-time
+        measurements required. Changed to PIC18F25KA80 + MCP2200 combination.
+        Vinod &amp; Pramode did ADC &amp; UART testing of PIC18F2458. Almost
+        decided to go for a PIC controller.</span></p>
+    <p><span style="font-size:14px;">29-Jan-12 : Sent the PIC based PCB for
+        fabrication. The memory bank switching found too slow for C code filling
+        large arrays. The uC architecture doesn't&nbsp; look very C compiler
+        friendly. Searched, with inputs from Pramode CE,&nbsp; for a 16 bit
+        version satisfying the requirements, found PIC24FV32KA302. Supported by
+        gcc.</span></p>
+    <p><span style="font-size:14px;">31-Jan-12 : Attended the Technical Training
+        Seminar by Microchip. Fortunately Microchip released development tools,
+        MPLABX,&nbsp; for GNU/Linux also.</span></p>
+    <p><span style="font-size:14px;">9-Feb-12 : Sent PIC24 uC based PCB for
+        fabrication.</span></p>
+    <p><span style="font-size:14px;">18-Feb-12 : Received PICKIT3 programmer and
+        PIC24FV32KA302 chips. Surface mount package was ordered by mistake,
+        instead of DIP, but tested them using PICKIT3 somehow. Started testing
+        the PCB from the beginning of Mar-12, facing problems mostly due to lack
+        of familiarity with PIC uCs. Thanks to the cooperation from Microchip
+        things are getting sorted out. Solving a UART error took days, to
+        realize that the watchdog timer is enabled by default.</span></p>
+    <p><span style="font-size:14px;">13-Mar-12: Transmitted 1 million blocks, of
+        256bytes,&nbsp; from uC to PC without any error. ADC seems to be at par
+        with the MCP3208 used in expEYES.</span></p>
+    <p><span style="font-size:14px;">20-Mar-12 : C language code failed to meet
+        the 100 ksamples/sec rate for&nbsp; ADC blockread. Started learning
+        PIC24 assembly language, great help from the <a href="http://my.safaribooksonline.com/book/electrical-engineering/semiconductor-technology/9781584505839/introduction-to-the-pic24-microcontroller-family/ch03lev1sec5#X2ludGVybmFsX0ZsYXNoUmVhZGVyP3htbGlkPTk3ODE1ODQ1MDU4MzkvNzg=">online
+          book</a> by Robert Reese, Bryan Jones and J. W. Bruce. </span></p>
+    <p><span style="font-size:14px;">26-Mar-12: With assembler code ADC
+        blockread giving 250 ksample/sec sampling rate, Timer1 ISR is used.
+        Tested single channel block reads by capturing and fitting sine wave.</span></p>
+    <p><span style="font-size:14px;">1-Apr-2012: Received a mail from Myra
+        Vanlnwegen, education coordinator for the <a href="http://www.raspberrypi.org/">Raspberry
+          Pi</a> Foundation, asking whether expEYES work with Raspberry Pi.
+        Requested her to send one Rpi board.</span></p>
+    <p><span style="font-size:14px;">5-Apr-12 : Time measurement routines are
+        almost done. A numbering scheme is worked out to make the functions more
+        generic. A CRO program is running now.</span></p>
+    <p><span style="font-size:14px;">7-Apr-12: Again some changes in hardware.
+        Decided to provide only one amplifier. A digital output other that SQRs,
+        all using a CMOS buffer IC. Introduced TC1240A after some continuous
+        testing.</span></p>
+    <p><span style="font-size:14px;">8-Apr-12: Having trouble with Charge Time
+        Measurement Unit of PIC micro. A = 5.5 uA, 48.6 uA &amp; 451 uA in 3
+        different ranges, measured using DMM. With 10x CRO probe connected V
+        =1.25 after&nbsp; feeding 5.5 uA for 10 usecs. Error reported but no
+        solution yet.</span></p>
+    <p><span style="font-size:14px;">18-Apr-2012: The Rpi board arrived. Help
+        for testing came from Alex Bradbury.</span></p>
+    <p><span style="font-size:14px;">20-Apr-2012: expEYES tested on Rpi.
+        Everything is fine except a USB error that allows only keyboard or mouse
+        along with expEYES. Bug report filed.</span></p>
+    <p><span style="font-size:14px;">1-May-2012: A serial port version of
+        expEYES has been developed for Rpi. Communication tested between uC and
+        Rpi. The PCB has been send for fabrication.</span></p>
+    <p><span style="font-size:14px;">9-May-12: Did several iterations of
+        prototyping. Added a 1mA constant current source with ON/OFF control.
+        Firmware almost done. Wrote a CRO program with extra features. Drawings
+        of the plastic shell given for making the mould. Almost getting ready
+        for production.</span></p>
+    <p><span style="font-size:14px;">16-May-12 : expEYES was announced on <a href="http://www.raspberrypi.org/archives/1228">Raspberry
+          Pi</a> webpage. Getting resonably good feedback and enquiries about
+        availability. Planning to make USB &amp; Serial version (for Rpi), both
+        having almost identical layout.</span></p>
+    <p><span style="font-size:14px;">17-May-12 : Started testing and documenting
+        experiments for the new model. Modifying firmare and Python code
+        whereever required. Some modifications are done to the hardware also.
+        Trying to reach the final PCB at the earliest.</span></p>
+    <p><span style="font-size:14px;">23-May-12: The first lot of PBCs send for
+        fabrication, asked the vendor in Delhi to start making some sample
+        pieces. Stopped work for two weeks, programs at JIT, Coimbatore and NIT,
+        Calicut.</span></p>
+    <p><span style="font-size:14px;">7-Jun-2012: Started writing software and
+        documentation. A CRO program with some extra features was done first. By
+        end of June several boards were assembled. Some minor changes to the
+        PCB. The read back of Square waves shifted to the after the buffer.
+        Series resistors added to A1 and A2 inputs after level shifting. Got the
+        plastic cabinets.</span></p>
+    <p><span style="font-size:14px;"><img src="images/proto-trial3.jpg" style="width: 400px; height: 203px;"></span></p>
+    <p><span style="font-size:14px;">1-Jul-2012: Final PCB send for fabrication.</span></p>
+    <p><span style="font-size:14px;">16-Jul-2012: Units send to Pramode &amp;
+        Georges, for testing.</span></p>
+    <p><span style="font-size:14px;">2-Aug-2012: Finished <a href="software.html">Software</a>
+        and a <a href="http://expeyes.in/Documents/eyesj-a4.pdf">User Manual</a>
+        describing around 50 experiments are ready. Website update and videos
+        are pending.</span></p>
+    <p><span style="font-size:14px;"><a href="http://expeyes.in/articles/55/expeyes-junior">ExpEYES
+          Junior</a> is ready. Photograph below shows capturing sound from a
+        Piezo Buzzer.</span></p>
+    <p><span style="font-size:14px;">20-Aug-2012: First lot of commercial
+        production started.</span></p>
+    <p><span style="font-size:14px;"><img src="images/ejphoto.jpg" style="width: 380px; height: 355px;"></span></p>
+  </body>
+</html>
