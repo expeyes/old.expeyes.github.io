@@ -91,32 +91,446 @@ hr {
   justify: left;
 }
 
-/*----------------image map -------------------*/
 
-/*<style media="screen">*/
+/*----------------EYES17 Top Panel image map -------------------*/
 
-#dmwhipp {
+#eyes17panel {
+    position:relative;
+    width:600px;
+    height:336px;
+    padding:0;
+    margin:0 auto;
+    background-image:url('eyes17_panel.png');
+    list-style-type:none;
+ }
+#eyes17panel li {
+    position:absolute;
+ }
+#eyes17panel li:hover div {
+    display:block;
+	color:blue;
+ }
+ 
+#eyes17panel a {
+    display:block;
+    width:77px;
+    height:77px;
+   /* border-radius:50%; */
+   
+ }
+#eyes17panel div {
+    display:none;
+    position:absolute;
+    box-sizing:border-box;
+    left:20px;
+    top:20px;
+    padding:2px;
+    border:2px solid #000000;
+    border-radius:10px;
+    background-color:#ffffff;
+    color:black; 
+	
+    /*background-image:linear-gradient(to bottom,#fff,#b7d6e9);*/
+    box-shadow:inset 0 0 20px #999,2px 2px 2px #999; 
+	
+ }
+
+#out {
+    left:60px;
+    top:190px;
+ }
+#out div {
+    width:150px;
+    height:60px;
+    color:blue; 
+ }
+ 
+#out a {
+    width:190px;
+    height:60px;
+ }
+  
+
+#in {
+    left:345px;
+    top:190px;
+ }
+#in div {
+    width:150px;
+    height:60px;
+ }
+ 
+#in a {
+    width:190px;
+    height:60px;
+ }
+
+#pv1 {
+    left:65px;
+    top:290px;
+ }
+#pv1 div {
+    width:120px;
+    height:100px;
+ }
+ 
+#pv1 a {
+    width:25px;
+    height:30px;
+ }
+ 
+#ccs {
+    left:60px;
+    top:150px;
+ }
+#ccs div {
+    width:130px;
+    height:60px;
+ }
+ 
+#ccs a {
+    width:25px;
+    height:30px;
+ }
+
+#pv2 {
+    left:100px;
+    top:290px;
+ }
+#pv2 div {
+    width:130px;
+    height:100px;
+ }
+ 
+#pv2 a {
+    width:25px;
+    height:30px;
+ }
+
+#sq1 {
+    left:130px;
+    top:290px;
+ }
+#sq1 div {
+    width:130px;
+    height:60px;
+ }
+ 
+#sq1 a {
+    width:25px;
+    height:30px;
+ }
+
+#sq2 {
+    left:160px;
+    top:290px;
+ }
+#sq2 div {
+    width:130px;
+    height:80px;
+ }
+ 
+#sq2 a {
+    width:25px;
+    height:30px;
+ }
+
+
+#od1 {
+    left:190px;
+    top:290px;
+ }
+#od1 div {
+    width:130px;
+    height:60px;
+ }
+ 
+#sq2 a {
+    width:25px;
+    height:30px;
+ }
+
+#wg {
+    left:225px;
+    top:290px;
+ }
+#wg div {
+    width:130px;
+    height:80px;
+ }
+ 
+#wg a {
+    width:25px;
+    height:30px;
+ }
+
+#wgb {
+    left:225px;
+    top:165px;
+ }
+#wgb div {
+    width:130px;
+    height:40px;
+ }
+ 
+#wgb a {
+    width:25px;
+    height:30px;
+ }
+ 
+#gnd1 {
+    left:110px;
+    top:170px;
+ }
+#gnd1 div {
+    width:100px;
+    height:60px;
+ }
+ 
+#gnd1 a {
+    width:100px;
+    height:20px;
+ }
+ 
+#gnd2 {
+    left:390px;
+    top:170px;
+ }
+#gnd2 div {
+    width:100px;
+    height:60px;
+ }
+ 
+#gnd2 a {
+    width:100px;
+    height:20px;
+ }
+ 
+#in1 {
+    left:350px;
+    top:170px;
+ }
+#in1 div {
+    width:120px;
+    height:80px;
+ }
+ 
+#in1 a {
+    width:25px;
+    height:30px;
+ }
+ 
+#in2 {
+    left:350px;
+    top:290px;
+ }
+#in2 div {
+    width:120px;
+    height:80px;
+ }
+ 
+#in2 a {
+    width:25px;
+    height:30px;
+ }
+ 
+#sen {
+    left:385px;
+    top:290px;
+ }
+#sen div {
+    width:120px;
+    height:80px;
+ }
+ 
+#sen a {
+    width:25px;
+    height:30px;
+ }
+
+#a1 {
+    left:415px;
+    top:290px;
+ }
+#a1 div {
+    width:120px;
+    height:80px;
+ }
+ 
+#a1 a {
+    width:25px;
+    height:30px;
+ }
+
+#a2 {
+    left:450px;
+    top:290px;
+ }
+#a2 div {
+    width:120px;
+    height:80px;
+ }
+ 
+#a2 a {
+    width:25px;
+    height:30px;
+ }
+
+#a3 {
+    left:485px;
+    top:290px;
+ }
+#a3 div {
+    width:120px;
+    height:80px;
+ }
+ 
+#a3 a {
+    width:25px;
+    height:30px;
+ }
+
+#mic {
+    left:510px;
+    top:290px;
+ }
+#mic div {
+    width:120px;
+    height:80px;
+ }
+ 
+#mic a {
+    width:25px;
+    height:30px;
+ }
+
+#rg {
+    left:510px;
+    top:165px;
+ }
+#rg div {
+    width:125px;
+    height:80px;
+ }
+ 
+#rg a {
+    width:25px;
+    height:30px;
+ }
+
+#acdc {
+    left:410px;
+    top:120px;
+ }
+#acdc div {
+    width:125px;
+    height:80px;
+ }
+ 
+#acdc a {
+    width:30px;
+    height:30px;
+ }
+
+#i2c {
+    left:540px;
+    top:85px;
+ }
+#i2c div {
+    width:120px;
+    height:110px;
+ }
+ 
+#i2c a {
+    width:30px;
+    height:25px;
+ }
+
+
+#bip {
+    left:540px;
+    top:145px;
+ }
+#bip div {
+    width:120px;
+    height:80px;
+ }
+ 
+#bip a {
+    width:30px;
+    height:25px;
+ }
+
+#led {
+    left:15px;
+    top:60px;
+ }
+#led div {
+    width:120px;
+    height:80px;
+ }
+ 
+#led a {
+    width:20px;
+    height:20px;
+ }
+
+#usb {
+    left:2px;
+    top:10px;
+ }
+#usb div {
+    width:120px;
+    height:80px;
+ }
+ 
+#usb a {
+    width:15px;
+    height:15px;
+ }
+
+
+
+
+
+
+ 
+#eyes17panel h6 {
+    margin:10px 0;
+    text-align:center;
+    text-transform:uppercase;
+ }
+
+#eyes17panel p {
+    font-size:75%;
+ }
+
+
+
+/*----------------Scope17 image map -------------------*/
+
+#scope17 {
     position:relative;
     width:796px;
     height:489px;
     padding:0;
     margin:0 auto;
-    background-image:url('../images/scope17.png');
+    background-image:url('scope17.png');
     list-style-type:none;
  }
-#dmwhipp li {
+#scope17 li {
     position:absolute;
  }
-#dmwhipp li:hover div {
+#scope17 li:hover div {
     display:block;
  }
-#dmwhipp a {
+#scope17 a {
     display:block;
     width:77px;
     height:77px;
     border-radius:50%;
  }
-#dmwhipp div {
+#scope17 div {
     display:none;
     position:absolute;
     box-sizing:border-box;
@@ -129,49 +543,50 @@ hr {
     border-radius:10px;
     /*
     background-image:linear-gradient(to bottom,#fff,#b7d6e9);
-    box-shadow:inset 0 0 20px #999,4px 4px 4px #999; */
-
+	*/
+    box-shadow:inset 0 0 20px #999,4px 4px 4px #999; 
     background-color:#ffffff;
-    color:#000000; 
+    color:#ffff00;  */
  }
 
-#in1 {
+#cap {
     left:565px;
     top:55px;
  }
-#in1 div {
+#cap div {
     width:200px;
     height:100px;
  }
  
-#in1 a {
+#cap a {
     width:120px;
     height:20px;
  }
  
-#in2 {
+#frq {
     left:690px;
     top:55px;
  }
-#in2 div {
+#frq div {
     width:150px;
     height:150px;
  }
  
-#in2 a {
+#frq a {
     width:100px;
     height:20px;
  }
 
 
  
-#dmwhipp h6 {
+#scope17 h6 {
     margin:10px 0;
     text-align:center;
     text-transform:uppercase;
  }
 
-#dmwhipp p {
+#scope17 p {
     font-size:75%;
  }
-/* </style> */
+
+
