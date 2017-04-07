@@ -1,1 +1,10 @@
-theme: jekyll-theme-cayman
+title: ExpEYES
+description: > # this means to ignore newlines until "x:"
+  ExpEYES is a hardware & software framework for developing science experiments, demonstrations and   
+  projects without getting into the details of electronics or computer programming.
+  It converts your PC into a science laboratory. 
+show_downloads: true
+google_analytics:
+theme: 
+source_url: https://github.com/expeyes/expeyes.github.io/blob/master/Documents/expeyes-5.0.0.zip
+deb_url: https://github.com/expeyes/expeyes.github.io/blob/master/Documents/expeyes-5.0.0.deb
