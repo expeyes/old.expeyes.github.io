@@ -1,0 +1,93 @@
+
+body {                       /* global background color */
+	background-color: #e8efe1;	; 
+	}
+
+div {
+max-width: 1200px;
+}
+
+p {
+  max-width: 1180px;
+  border: 5;
+  margin: 10;
+  color: rgb(10, 10, 10);
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+
+p.ex1 {
+    font: 16px arial, sans-serif;
+}
+
+l {
+max-width: 1200px;
+}
+
+
+/*-------------------Navigation bar ---------------------*/
+#mynb ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #046;
+}
+
+#mynb li {
+    float: left;
+}
+
+#mynb li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    font: 18px arial, sans-serif;
+
+}
+
+#mynb li a:hover {
+    background-color: #111;
+}
+
+/*-----------------------image gallary --------------*/
+div.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+}
+
+#myimg img {              /* size of icons in the gallery */
+    width: 120px;
+    height:90px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.caption {
+    display: block;
+    color: rgb(0, 0, 20);
+    font-size: 14px;
+    text-align: center;
+}
+
+/*------------------- List ---------------------*/
+
+ul {
+    padding: 10px;
+}
+
+ul li {
+	margin: 5;
+}
+
+hr {
+  border: 5;
+  width: 1200px;
+  justify: left;
+}
+
