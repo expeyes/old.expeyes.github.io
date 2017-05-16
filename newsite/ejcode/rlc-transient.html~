@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <meta name="keywords" content="expeyes, experiment, science, usb interface, engineering">
+    <title>RLC transient</title>
+  </head>
+  <body> <a href="../index.html"><img src="../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h3>Transient Response of LCR Circuits </h3>
+    <p> The transient response of LCR circuit is studied by applying a 5-&gt;0
+      volts step and measuring the voltage change across the capacitor. Resonant
+      frequency and damping are extracted by fitting the data with the equation
+      of a damped sinusoid. For and inductor of 130 mH (with a coil resistance
+      of around 600 Ohms) and a capacitor of 0.1 uF, the circuit shows
+      under-damped response. </p>
+    <img style="width: 352px; height: 376px;" alt="" src="images/RLC-transient.jpg">
+    &nbsp;<img style="width: 516px; height: 376px;" alt="" src="images/RLC-curves.png">
+  </body>
+</html>

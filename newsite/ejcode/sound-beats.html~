@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <meta name="keywords" content="expeyes, experiment, science, usb interface, engineering">
+    <title>sound beats</title>
+  </head>
+  <body> <a href="../index.html"><img src="../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h3>Interference of Sound</h3>
+    <p>Two different frequencies are generated on SQR1 and SQR2 and both are
+      connected to passive Piezo buzzers. The sound is captured by the built-in
+      microphone and connected to A1 after amplification. The two sinusoids are
+      added up to give an envelope. The frequency difference between the two
+      sources in the beat frequency. </p>
+    <img style="width: 416px; height: 329px;" alt="" src="images/sound-interference.jpg">
+    &nbsp;<img style="width: 590px; height: 334px;" alt="" src="images/inter-sound_0.png"><br>
+    <br>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <meta name="keywords" content="expeyes, experiment, science, usb interface, engineering">
+    <title>pers. vision</title>
+  </head>
+
+    <h3>Persistence of vision, flickering LED</h3>
+    <p> Power an LED with using SQR1 and change its frequency gradually from 1Hz
+      to 50Hz to observe at what frequency the flickering stops. It may depend
+      on the observer and the intensity of light. I felt the flickering stopping
+      at around 40 Hz, and my son says it still flickers at that frequency.
+      Connection: SQR1 --LED-- GND. No need of series resistor since SQR1 comes
+      out via a 100 Ohm resistor. </p>
+    <p>The program listed below gives a slider to change the SQR1 frequency.</p>
+    <p><br>
+      from Tkinter import *<br>
+      import expeyes.eyesj<br>
+      p=expeyes.eyesj.open()<br>
+      <br>
+      def set_freq(w):<br>
+      &nbsp;&nbsp;&nbsp; state = int(Sqr1.get())<br>
+      &nbsp;&nbsp;&nbsp; fr = float(Sqr1.get())<br>
+      &nbsp;&nbsp;&nbsp; res = p.set_sqrs(fr)<br>
+      <br>
+      w = Tk()<br>
+      Sqr1 = Scale(w,command = set_freq, orient=HORIZONTAL, length=200,
+      showvalue=True, from_ = 1, to=50, resolution=.1)<br>
+      Sqr1.pack()<br>
+      w.mainloop()</p>
+  </body>
+</html>

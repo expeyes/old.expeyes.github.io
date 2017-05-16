@@ -10,18 +10,16 @@
 	<!-- core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+	<!--
+	<link rel="stylesheet" href="js/styles/default.css">
+	<script src="js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	-->
+	
 </head><!--/head-->
 
 <body class="homepage">
@@ -42,8 +40,8 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="experiments.html">Experiments</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="experiments.html">Experiments</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Software &#10549;</a>
                             <ul class="dropdown-menu">
@@ -68,7 +66,7 @@
 								<li><a href="timeline.html">Timeline</a></li> 
                             </ul>
                         </li>                        
-                        <li><a href="buy.html">How to buy</a></li>                        
+                        <li  ><a href="buy.html">How to buy</a></li>                        
                         <li><div class="search">
                                 <form role="form" style="color:#fff;">
                                     <input type="text" class="search-form" autocomplete="off" placeholder="Search">
@@ -83,176 +81,39 @@
 		
     </header><!--/header-->
 
-    <section id="main-slider" class="no-margin">
-        <div class="carousel slide">
-            <ol class="carousel-indicators">
-                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#main-slider" data-slide-to="1"></li>
-                <li data-target="#main-slider" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
 
-                <div class="item active" style="background-image: url(images/slider/bg5.jpg)">
-                    <div class="container">
-                        <div class="row slide-margin">
-                            <div class="col-sm-6">
-                                <div class="carousel-content mywrapper">
-									<div class="myblur">
-                                    <h1 class="animation animated-item-1">Presenting , ExpEYES - 17</h1>
-                                    <h2 class="animation animated-item-2">The latest instrument from the Phoenix-Project stables<br><br>Your Lab @ Home ... A tool for learning science by exploring and experimenting.</h2>
-                                    </div>
-                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
-                                </div>
-                            </div>
 
-                            <div class="col-sm-6 hidden-xs animation animated-item-4">
-                                <div class="slider-img">
-                                    <img src="images/slider/exp17.png" class="img-responsive" style="-webkit-box-reflect: below -20px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(250, 250, 250, 0.3)));">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div><!--/.item-->
-
-                <div class="item" style="background-image: url(images/slider/bg3.jpg)">
-                    <div class="container">
-                        <div class="row slide-margin">
-                            <div class="col-sm-6">
-                                <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">MicroHOPE</h1>
-                                    <h2 class="animation animated-item-2">Micro-controllers for Hobby Projects and Education...</h2>
-                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 hidden-xs animation animated-item-4">
-                                <div class="slider-img">
-                                    <img src="images/slider/microhope.png" class="img-responsive" style=" -webkit-box-reflect: below 30px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(30%, transparent) , to(rgba(250, 250, 250, 0.3)));">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div><!--/.item-->
-
-                <div class="item" style="background-image: url(images/slider/bg4.jpg)">
-                    <div class="container">
-                        <div class="row slide-margin">
-                            <div class="col-sm-6">
-                                <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
-                                    <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
-                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 hidden-xs animation animated-item-4">
-                                <div class="slider-img">
-                                    <img src="images/slider/img3.png" class="img-responsive">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--/.item-->
-            </div><!--/.carousel-inner-->
-        </div><!--/.carousel-->
-        <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
-            &#11164;
-        </a>
-        <a class="next hidden-xs" href="#main-slider" data-slide="next">
-            &#10148;
-        </a>
-    </section><!--/#main-slider-->
-
- 
-    <section id="feature-list">
+    <section id="partner">
         <div class="container">
-            <div class="center wow fadeInDown">
-                <h2>Device Features: ExpEYES-17</h2>
-			</div>
-            <div class="center wow fadeInUp">
-            <div class="row">
-
-                   <div class="tab-wrap"> 
-                        <div class="media">
-                            <div class="parrent pull-left">
-                                <ul class="nav nav-tabs nav-stacked">
-                                    <li class="active"><a href="#tab1" data-toggle="tab" class="">Fully functional Python API</a></li>
-                                    <li class=""><a href="#tab2" data-toggle="tab" class="">4-Channel Oscilloscope</a></li>
-                                    <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">8MHz Timing Measurement</a></li>
-                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">+/-16V to +/-10mV voltage ranges</a></li>
-                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">Capacitance &amp; Resistance Measurement</a></li>
-                                    <li class=""><a href="#tab6" data-toggle="tab" class="tehnical">Over 50 experiments</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="parrent media-body">
-                                <div class="tab-content">
-                                    <div class="tab-pane fade active in" id="tab1">
-                                        <div class="media">
-                                           <div class="pull-left">
-                                                <a class="preview" href="images/ac-circuits.png" rel="prettyPhoto"><img class="img-responsive" style="width:300px;" src="images/ac-circuits.png"></a>
-                                            </div>
-                                            <div class="media-body mytabs">
-                                                 <h2>Fully controllable via the Python Library and GUI</h2>
-                                                 <p>Over 50 different experiments with dedicated graphical user interfaces, Schematic diagrams, and help files are ready to use. The individual function calls can also be accessed from Python scripts, and several code examples are included. The code is compatible with Linux, Windows &amp; OSX</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                     <div class="tab-pane fade" id="tab2">
-                                        <div class="media">
-                                           <div class="pull-left">
-                                                <a class="preview" href="images/with-netbook-scaled.png" rel="prettyPhoto"><img class="img-responsive" style="width:300px;" src="images/scope.jpg"></a>
-                                            </div>
-                                            <div class="media-body mytabs">
-                                                 <h2>4-Channel, 1MSPS , +/-16V to +-0.5V</h2>
-                                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use.
-                                                 </p>
-                                            </div>
-                                        </div>
-                                     </div>
-
-                                     <div class="tab-pane fade" id="tab3">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
-                                     </div>
-                                     
-                                     <div class="tab-pane fade" id="tab4">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words</p>
-                                     </div>
-
-                                     <div class="tab-pane fade" id="tab5">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,</p>
-                                     </div>
-                                </div> <!--/.tab-content-->  
-                            </div> <!--/.media-body--> 
-                        </div> <!--/.media-->     
-                    </div><!--/.tab-wrap-->               
-			</div> <!--row-->
-			</div>
-		</div>
-	</div>
-
-
     <section id="recent-works">
-        <div class="container">
+        <div class="container" >
             <div class="center wow fadeInDown">
-                <h2>Featured Experiments</h2>
-                <p class="lead">A selection of experiments from ExpEYES-junior</p>
-            </div>
+                <h2>ExpEYES-Junior Experiments</h2>
+            </div>    
 
+            <div class="center wow fadeInUp">
 
-            <div class="row">
+           <div class="row">
+
+                <div class="col-xs-6 col-sm-3 col-md-2"><div class="recent-work-wrap">
+                        <img class="img-responsive" src="images/portfolio/recent/ac-circuits.png" alt="">
+                        <div class="overlay"><div class="recent-work-inner">
+                                <p>Study of AC circuits</p>
+                                <a class="preview" href="images/portfolio/full/item1.png" rel="prettyPhoto">&#128065; View</a> <!-- optional for large image viewing in lightbox -->
+                        </div></div>
+                        <div class="titleoverlay"><div class="recent-work-inner">
+                                <h3><a href="#">AC Circuits</a> </h3>
+                        </div></div>
+                </div></div>   
 
 
                 <div class="col-xs-6 col-sm-3 col-md-2"><div class="recent-work-wrap">
                         <img class="img-responsive" src="images/portfolio/recent/croplus.png" alt="">
                         <div class="overlay"><div class="recent-work-inner">
                                 <p>User Interface for ExpEYES</p>
-                                <!--<a class="preview" href="images/portfolio/full/item1.png" rel="prettyPhoto">&#128065; View</a> <!-- optional for large image viewing in lightbox --> 
                         </div></div>
                         <div class="titleoverlay"><div class="recent-work-inner">
-                                <h3><a rel="prettyPhoto[ajax]" href="ejcode/croplus.html?iframe=true&width=100%&height=100%" title="ExpEYES-Junior GUI : Croplus">EYES GUI</a></h3>
+                                <h3><a href="croplus.html">EYES GUI</a></h3>
                         </div></div>
                 </div></div>   
 
@@ -264,7 +125,7 @@
                                 <p>Difference between AC & DC voltages</p>
                         </div></div>
                         <div class="titleoverlay"><div class="recent-work-inner">
-                                <h3><a rel="prettyPhoto[ajax]" href="ejcode/ac-dc.html?iframe=true&width=100%&height=100%">AC &amp; DC</a></h3>
+                                <h3><a href="ac-dc.html">AC &amp; DC</a></h3>
                         </div></div>
                 </div></div>   
 
@@ -274,7 +135,7 @@
                                 <p>Study of resistors in Parallel and Series</p>
                         </div></div>
                         <div class="titleoverlay"><div class="recent-work-inner">
-                                <h3><a rel="prettyPhoto[ajax]" href="ejcode/resistance.html?iframe=true&width=100%&height=100%"> Resistors </a></h3>
+                                <h3><a href="resistance.html"> Resistors </a></h3>
                         </div></div>
                 </div></div>   
 
@@ -284,7 +145,7 @@
                                 <p>Measure the AC & DC resistance of Water</p>
                         </div></div>
                         <div class="titleoverlay"><div class="recent-work-inner">
-                                <h3><a rel="prettyPhoto[ajax]" href="ejcode/water-resistance.html?iframe=true&width=100%&height=100%">Resistance of Water</a></h3>
+                                <h3><a href="water-resistance.html">Resistance of Water</a></h3>
                         </div></div>
                 </div></div>   
 
@@ -294,7 +155,7 @@
                                 <p>Measure pickup voltage from powerlines, and calculate the frequency</p>
                         </div></div>
                         <div class="titleoverlay"><div class="recent-work-inner">
-                                <h3><a rel="prettyPhoto[ajax]" href="ejcode/pickup.html?iframe=true&width=100%&height=100%">Powerline Pickup</a></h3>
+                                <h3><a href="pickup.html">Powerline Pickup</a></h3>
                         </div></div>
                 </div></div>   
 
@@ -304,7 +165,7 @@
                                 <p>Study the properties of a simple parallel plate capacitor</p>
                         </div></div>
                         <div class="titleoverlay"><div class="recent-work-inner">
-                                <h3><a rel="prettyPhoto[ajax]" href="ejcode/capacitance.html?iframe=true&width=100%&height=100%">Capacitor</a></h3>
+                                <h3><a href="capacitance.html">Capacitor</a></h3>
                         </div></div>
                 </div></div>   
 
@@ -315,7 +176,7 @@
                                 <p>Measure Dielectric Constant</p>
                         </div></div>
                         <div class="titleoverlay"><div class="recent-work-inner">
-                                <h3><a rel="prettyPhoto[ajax]" href="ejcode/dielectric.html?iframe=true&width=100%&height=100%">Dielectric Constant</a></h3>
+                                <h3><a href="dielectric.html">Dielectric Constant</a></h3>
                         </div></div>
                 </div></div>   
 
@@ -673,166 +534,23 @@
 
 
             </div><!--/.row-->
-        </div><!--/.container-->
-    </section><!--/#recent-works-->
-
-    <section id="middle">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 wow fadeInDown">
-                    <div class="skill">
-                        <h2>Our Skills</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                        <div class="progress-wrap">
-                            <h3>Graphic Design</h3>
-                            <div class="progress">
-                              <div class="progress-bar  color1" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-                                <span class="bar-width">85%</span>
-                              </div>
-
-                            </div>
-                        </div>
-
-                        <div class="progress-wrap">
-                            <h3>HTML</h3>
-                            <div class="progress">
-                              <div class="progress-bar color2" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-                               <span class="bar-width">95%</span>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="progress-wrap">
-                            <h3>CSS</h3>
-                            <div class="progress">
-                              <div class="progress-bar color3" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                <span class="bar-width">80%</span>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="progress-wrap">
-                            <h3>Wordpress</h3>
-                            <div class="progress">
-                              <div class="progress-bar color4" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                <span class="bar-width">90%</span>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div><!--/.col-sm-6-->
-
-                <div class="col-sm-6 wow fadeInDown">
-                    <div class="accordion">
-                        <h2>Why People like us?</h2>
-                        <div class="panel-group" id="accordion1">
-                          <div class="panel panel-default">
-                            <div class="panel-heading active">
-                              <h3 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1">
-                                  Lorem ipsum dolor sit amet
-                                  <i class="fa fa-angle-right pull-right"></i>
-                                </a>
-                              </h3>
-                            </div>
-
-                            <div id="collapseOne1" class="panel-collapse collapse in">
-                              <div class="panel-body">
-                                  <div class="media accordion-inner">
-                                        <div class="pull-left">
-                                            <img class="img-responsive" src="images/accordion1.png">
-                                        </div>
-                                        <div class="media-body">
-                                             <h4>Adipisicing elit</h4>
-                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
-                                        </div>
-                                  </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h3 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo1">
-                                  Lorem ipsum dolor sit amet
-                                  <i class="fa fa-angle-right pull-right"></i>
-                                </a>
-                              </h3>
-                            </div>
-                            <div id="collapseTwo1" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h3 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree1">
-                                  Lorem ipsum dolor sit amet
-                                  <i class="fa fa-angle-right pull-right"></i>
-                                </a>
-                              </h3>
-                            </div>
-                            <div id="collapseThree1" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h3 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour1">
-                                  Lorem ipsum dolor sit amet
-                                  <i class="fa fa-angle-right pull-right"></i>
-                                </a>
-                              </h3>
-                            </div>
-                            <div id="collapseFour1" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
-                              </div>
-                            </div>
-                          </div>
-                        </div><!--/#accordion1-->
-                    </div>
-                </div>
-
-            </div><!--/.row-->
-        </div><!--/.container-->
-    </section><!--/#middle-->
 
 
-    <section id="partner">
-        <div class="container">
-            <div class="center wow fadeInDown">
-                <h2>In The News</h2>
-                <!--<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
-            </div>    
+			</div>
 
-            <div class="partners">
-                <ul>
-                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/partner1.png"></a></li>
-                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/partner2.png"></a></li>
-                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/partner3.png"></a></li>
-                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/partner4.png"></a></li>
-                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/partner5.png"></a></li>
-                </ul>
-            </div>        
+
+
+
         </div><!--/.container-->
     </section><!--/#partner-->
+
+
 
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2017 <a target="_blank" href="http://expeyes.in/" title="">ExpEYES.in</a> . Site designed and maintained by <a target="_blank" href="http://jithinbp.in/" title="">Jithin B.P.</a>
+                    &copy; 2017 <a target="_blank" href="http://expeyes.in/" title="">ExpEYES.in</a>
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">

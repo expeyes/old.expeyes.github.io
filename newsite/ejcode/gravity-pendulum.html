@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <meta name="keywords" content="expeyes, experiment, science, usb interface, engineering">
+    <title>g by pendulum</title>
+  </head>
+
+    <h3>Period of a Pendulum, value of 'g'</h3>
+    <p> Period of oscillation of a pendulum can be measured by allowing it to
+      intercept a beam of light falling on a photo-transistor. The LED is
+      powered by SQR1 and the photo-transistor collector is connected to SEN,
+      which goes to the internal analog comparator of the micro-controller.
+      Oscillate the pendulum and measure the time period between alternate
+      interceptions, count only for one direction. </p>
+    <p><span>import expeyes.eyesj, sys<br>
+        p = expeyes.eyesj.open()<br>
+        p.set_sqr1(0)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # set SQR1 HIGH
+        to light LED<br>
+        for k in range(10):<br>
+        &nbsp;&nbsp;&nbsp; print p.multi_r2rtime(0,1)</span>&nbsp;&nbsp; #
+      Rising edge to rising edge on comparator output, skip one edge in between
+    </p>
+    <p>643253.0<br>
+      643262.0<br>
+      643251.0<br>
+      643273.0<br>
+      643249.0<br>
+      643281.0<br>
+      643245.0<br>
+      643205.0<br>
+      643252.0<br>
+      643228.0</p>
+    <p>Acceleration due to gravity can be calculated from the period measured.
+      Since we have used a rod pendulum, the relation</p>
+    <p>is g = 4 * pi * pi * L / (T*T) = 4*pi**2*15.4/.6432**2*2/3 = 979.7</p>
+    <p>Don't get exited with the accuracy of the result. It might have come
+      closer to the actual value due to the error in measuring the length. What
+      really maters is the small spread in the measured value. The frequency
+      change due to large amplitudes can be easily observed.</p>
+    <p><br>
+    </p>
+  </body>
+</html>

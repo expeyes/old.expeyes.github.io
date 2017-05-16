@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <meta name="keywords" content="expeyes, experiment, science, usb interface, engineering">
+    <title>logic gates</title>
+  </head>
+  <body> <a href="../index.html"><img src="../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h3>Study of Logic Gates</h3>
+    <p> expEYES can be used as a test equipment for studying the logic gates.
+      The TTL ICs 7432 &amp; 7408 are powered from OD1. The inputs are provided
+      by SQR1 and SQR2 set at 90deg phase difference. The experimental setup and
+      outputs for AND and OR gates are shown below. </p>
+    <img style="width: 417px; height: 292px;" alt="" src="images/logic-gate.jpg">
+    &nbsp;<img style="width: 445px; height: 292px;" alt="" src="images/or-gate.png"><br>
+    <br>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <title>resistance</title>
+  </head>
+  <body> <a href="../index.html"><img src="../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <p><span style="font-size:14px;"> The current from a battery flows in the
+        same direction all the time and the amount of current does not change so
+        long as the resistance of the circuite is constant. These are called
+        Direct Current, or DC. A battery is a DC voltage source. The mains
+        supply is AC or Alternating current. How does it vary with time. An easy
+        way to compare the two is plotting the voltage as a function of time.
+        The PVS output of expEYES is a DC source, and the SINE output is an AC
+        source. Connect PVS to A1 and SINE to A2 and watch them using the CRO+
+        program. The peak voltage of our AC is 3.73 volts and the frequency is
+        151.5 Hz. For the mains supply voltages are in hundreds of volts and the
+        frequency is either 50 or 60 Hz. <br>
+      </span></p>
+  </body>
+</html>

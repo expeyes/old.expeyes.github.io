@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <meta name="keywords" content="expeyes, experiment, science, usb interface, engineering">
+    <title>RC integration</title>
+  </head>
+  <body> <a href="../index.html"><img src="../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h3>RC Integration &amp; Differentiation </h3>
+    <p> A square wave is applied to an RC circuit as shown in the figure below.
+      The voltage across the capacitor is nearly triangular in shape.
+      Integrating a square wave with time gives a triangular wave. The response
+      depends on the Period of the applied wave and the RC time constant. In
+      this case RC = 1.0e-6 x 1000 = 1 millisecond. The period of 1kHz wave is
+      also the same. </p>
+    <img style="width: 321px; height: 277px;" alt="" src="images/RC-integration.jpg">
+    &nbsp;<img style="width: 421px; height: 277px;" alt="" src="images/rc-integ1khz.png">&nbsp;
+    <img style="width: 426px; height: 278px;" alt="" src="images/rc-integ20hz.png">
+    <br>
+    <br>
+    <span style="font-weight: bold;">RC Differentiation</span><br>
+    <p> &nbsp;&nbsp;&nbsp; A 100 Hz squarewave is differentiated using the RC
+      circuit shown below. In an ideal case the output should be a positive
+      spike at every rising edge of the input and a negative spike every falling
+      edge </p>
+    <p><img style="width: 328px; height: 265px;" alt="" src="images/RC-differentiation.jpg">&nbsp;
+      <img style="width: 402px; height: 266px;" alt="" src="images/rc-diff100Hz.png"></p>
+    <p><br>
+      <br>
+    </p>
+    <br>
+  </body>
+</html>
