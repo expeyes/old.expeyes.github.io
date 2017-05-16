@@ -65,6 +65,40 @@ jQuery(function($) {'use strict',
 
 	//Pretty Photo
 	$("a[rel^='prettyPhoto']").prettyPhoto({
-		social_tools: false
+		social_tools: false,
+		default_width:"98%",
+		markup: '<div class="pp_pic_holder"> \
+						<div class="ppt">&nbsp;</div><a class="pp_close" href="#">Close</a> \
+						<div class="pp_top"> \
+							<div class="pp_left"></div> \
+							<div class="pp_middle"></div> \
+							<div class="pp_right"></div> \
+						</div> \
+						<div class="pp_content_container"> \
+							<div class="pp_left"> \
+							<div class="pp_right"> \
+								<div class="pp_content"> \
+									<div class="pp_loaderIcon"></div> \
+									<div class="pp_fade"> \
+										<div id="pp_full_res"></div> \
+										<div class="pp_details"> \
+										</div> \
+									</div> \
+								</div> \
+							</div> \
+							</div> \
+						</div> \
+						<div class="pp_bottom"> \
+							<div class="pp_left"></div> \
+							<div class="pp_middle"></div> \
+							<div class="pp_right"></div> \
+						</div> \
+					</div> \
+					<div class="pp_overlay"></div>',
+			iframe_markup: '<iframe src ="{path}" width="100%" height="{height}" frameborder="no"></iframe>',
+
 	});	
+
+
+
 });
