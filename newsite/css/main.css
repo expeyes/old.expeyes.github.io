@@ -1007,6 +1007,24 @@ a.accordion-toggle  i{
   background-color:rgba(5, 50, 58, 0.55);
 }
 
+.tab-wrap-software span{
+  color:#fff;
+}
+
+.tab-wrap-software a {
+  color: #fff;
+}
+
+.tab-wrap-software a:visited{
+  color:#9ff;
+}
+
+.tab-wrap-software a:hover, a:focus {
+  color: #0f0;
+}
+
+
+
 
 .tab-content{
   padding: 20px;
