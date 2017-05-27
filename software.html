@@ -19,46 +19,57 @@
         <li><a href="../news.html"><span>News</span></a></li>
       </ul>
     </div>
-    <h3> ExpEYES Software</h3>
-    <p>Added on Feb-2017 : For running ExpEYES-17, download and install <a href="Documents/eyes17-1.0.0.deb">eyes17-1.0.0.deb</a>
-      using the command</p>
-    <p>$ gdebi eyes17-1.0.0.deb</p>
-    <p>The ISO image containing the latest version of the software is <a href="http://www.iuac.res.in/%7Eelab/expeyes-16.04-v1.iso">HERE</a>.
-    </p>
-    <p>&nbsp;&nbsp;&nbsp; ExpEYES software is written in Python and it should
-      run on any computer having Python interpreter (version &gt; 2.7) and
-      Python Serial library. It is included in the Debian and Ubuntu (version
-      &gt; 13.04) GNU/Linux distributions. Otherwise it can be installed from <a
-        href="http://expeyes.in/Documents/expeyes-3.1.0.deb">expeyes.deb</a>
-      file.<br>
-    </p>
+    <h3> ExpEYES Junior</h3>
+    <p>Software for expeyes junior is part of Ubuntu since version 14.04. You
+      may install it by:</p>
+    <p>$ sudo apt-get install
+      expeyes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; or by using any
+      GUI installers</p>
     <p>For Ubuntu versions 10.04 to 12.10 you may use <a href="Documents/expeyes-ub-10.04-4.0.0.deb">this
-        deb file</a>.</p>
-    <p> 1. The expEYES Live ISO images for DVDs and USB pendrives <br>
-      <br>
-      The fastest way to get expEYES running on your PC is to boot your computer
-      from a DVD or USB pendrive, prepared using the <a href="http://www.iuac.res.in/%7Eelab/expEYES-14.04_v16.iso">ISO
-        image</a>. The procedure to to this on MSWindows is explained <a href="http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows">here</a>.
-      Once you boot from the pen-drive, the Lubuntu desktop will appear. Start
-      the expEYES program from the Applications-&gt;Science menu. Download the
-      ISO images of the Live DVD. This ISO image is prepared from Lubuntu 14.04
-      and contains other educational resources also.<br>
-      <br>
-      3. On Other GNU/Linux Distributions<br>
-      <br>
-      Download <a href="Code/eyes-junior.zip">expeyes.zip</a> and do the
-      following:</p>
-    <p>$unzip expeyes.zip</p>
+        deb file</a>. </p>
+    <h4>On Other GNU/Linux Distributions</h4>
+    <p> Download <a href="Code/eyes-junior.zip">eyes-junior.zip</a> and do the
+      following: </p>
+    <p>$unzip eyes-junior.zip</p>
     <p>$ cd eyes-junior</p>
     <p>$ sudo python croplus.py</p>
-    <p>To use the device as a normal user, <a href="Code/postinst.sh">download
-        the file</a> to set the USB permissions by running.<br>
-      <br>
-      # sh postinst.sh<br>
-      <br>
-      4. On MS Windows<br>
-      <br>
-      Since the programs are written in Python, the same source code works on
+    To use the device as a normal user, <a href="Code/postinst.sh">download the
+      file</a> to set the USB permissions by running.<br>
+    <br>
+    # sh postinst.sh
+    <h3>ExpEYES 17<br>
+    </h3>
+    <p></p>
+    <p></p>
+    <p>On Ubuntu, 14.04 or later,&nbsp; download and install <a href="Documents/eyes17-1.0.0.deb">eyes17-1.0.0.deb</a>
+      using the command</p>
+    <p>$ sudo gdebi eyes17-1.0.0.deb</p>
+    <p>The PC should be connected to Internet during this, since eyes17 depends
+      on expeyes junior. Gdebi will install all the necessary packages from the
+      Ubuntu repository.</p>
+    <h4>On Other GNU/Linux Distributions</h4>
+    <p> Download <a href="Code/eyes-junior.zip">eyes17.zip</a> , unzip it and
+      run</p>
+    <p>$ sudo python scope17.py</p>
+    To use the device as a normal user, <a href="Code/postinst.sh">download the
+      file</a> to set the USB permissions by running.<br>
+    <br>
+    # sh postinst.sh
+    <h3></h3>
+    <h3>For those who do not have GNU/Linux installed</h3>
+    <p>Download the <a href="http://www.iuac.res.in/%7Eelab/expeyes-16.04-v1.iso">ISO
+        image</a> , that is a modified version of Ubuntu 16.04.&nbsp;MSWindows
+      users may download the program <a href="https://rufus.akeo.ie/downloads/rufus-2.15.exe">rufus</a>
+      and use that to make a USB pendrive bootable with this ISO image. After
+      making the bootable pendrive, shut down the PC, insert the pendrive and
+      select the boot device while starting again. For PCs having Windows 8 or
+      later may have UEFI and secure boot enabled in the BIOS. You need to
+      disable secure boot and choose Legacy mode instead of UEFI, from the BIOS
+      settings. The keys to press to enter BIOS dependss on the brand of the PC
+      you have (for HP it is ESC key, for Lenovo Fn+F2 and Fn+F12 to select the
+      boot&nbsp; device) </p>
+    <h3><span style="color: #0a0a0a;">Installing on</span> MS Windows</h3>
+    <p> Since the programs are written in Python, the same source code works on
       GNU/Linux and Windows. You need to install Python Interpreter and the
       required libraries. The USB device appears as an RS232 connection to the
       software. The virtual COM port is established by the driver software for
@@ -72,11 +83,17 @@
       <li>Python Imaging Library module</li>
       <li>Scipy and Numpy modules</li>
     </ul>
-    <p>Then run the program croplus.py</p>
+    For eyes junior, download <a href="Code/eyes-junior.zip">eyes-junior.zip</a>
+    and run the program croplus.py
+    <p>For eyes junior, download <a href="Code/eyes-junior.zip">eyes-junior.zip</a>
+      and run the program croplus.py
+    </p>
+    <br>
     <span style="font-weight: bold;">Windows version of the program</span><br>
-    A native Windows program is also available. It includes the main osciloscope
-    application and severel experiments. More details are at <a href="http://www.expeyes.herobo.com/">http://www.expeyes.herobo.com/</a><br>
-    <p> &nbsp; </p>
+    A native Windows program is also available for expeyes junior. It includes
+    the main oscilloscope application and several experiments. More details are
+    at <a href="http://www.expeyes.herobo.com/">http://www.expeyes.herobo.com/</a><br>
+    <br>
     <p> </p>
   </body>
 </html>
