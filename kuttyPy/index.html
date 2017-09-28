@@ -7,15 +7,26 @@
   <body>
     <div style="text-align: center;">
       <h3>KuttyPy - Connect to the outside world using Python</h3>
-      <table style="width: 100%" border="1">
+      <table style="width: 100%;" cellpadding="4" border="0">
         <tbody>
           <tr>
             <td>
-              <div style="text-align: left;">Primary Objective:&nbsp; <br>
-                Control/Monitor Analog and Digital voltage signals using simple
-                Python programs. The circuit board that can be connected to the
-                USB port provides&nbsp; 32 terminals. that can be configured as
-                Input or Output </div>
+              <div style="text-align: left;"><span style="font-family: sans-serif;">Control
+                  lamps, switches, motors and read voltages using small Python
+                  programs and a circuit board connected to the USB port.<br>
+                  The board provides 32 terminals that are organized in to 4
+                  groups, each having 8 terminals, namely A, B,C and D. <br>
+                  The individual terminals are marked as PA0 -- PA7 for port A,
+                  PB0 -- PB7 for port B etc.</span><span style="font-family: sans-serif;"><br>
+                </span>
+                <div style="text-align: justify;"><span style="font-family: sans-serif;">
+                    The terminals you are learning to manipulate belong to
+                    Atmega32 micro-controller, but we only consider them as a
+                    set of Registers accessible from Python.</span> The
+                  user&nbsp; is expected to know Python and the binary number
+                  system.<br>
+                  <span style="font-family: sans-serif;"></span></div>
+              </div>
             </td>
             <td style="text-align: left;">
               <div style="text-align: left;"><img style="width: 388px; height: 222px;"
@@ -24,18 +35,45 @@
           </tr>
         </tbody>
       </table>
-      <p><br>
-      </p>
-      <div style="text-align: left;">Primary Objective:&nbsp; <br>
-        Control/Monitor Analog and Digital voltage signals using simple Python
-        programs. The circuit board that can be connected to the USB port
-        provides&nbsp; 32 terminals. that can be configured as Input or Output<br>
+      <p style="text-align: justify;">The simplest thing to start with is to
+        control LEDs connected to any of the terminals. Connect an LED from PB0
+        to Ground with 5k resistor in series, for current limiting. The LED
+        should blink when you run the Python program <a href="code/blink.py">blink.py</a>.</p>
+      <div style="text-align: left;">Let us examine the code line by line:<br>
         <br>
-        Additional</div>
-      <ul style="text-align: left;">
-        <li><br>
-        </li>
-      </ul>
+        <span style="font-weight: bold;">from kuttyPy import *</span><br>
+        This line imports the kuttyPy module ( kuttyPy.py should be in your
+        working directory). This module gives you&nbsp; functions that can
+        read/write the Registers of the micro-controller connected to the USB
+        port.&nbsp; This line also searches for the hardware on the available
+        USB ports. If nothing found, ith program is terminated.<br>
+        <br>
+        <span style="font-weight: bold;">setReg(DDRB,255)</span><br>
+        DDRB is an 8bit Register that decides the direction of the terminals PB0
+        -- PB7. If a bit is 1, the corresponding terminal becomes an output. If
+        it is zero, the terminal becomes an input. DDR stands for Data Direction
+        Register. The last letter represents the port, for example DDRA decides
+        the direction of port A.<br>
+        <br>
+        time.sleep(1)&nbsp;&nbsp; , for a one second wait<br>
+        <br>
+        <span style="font-weight: bold;">setReg(PORTB,255)</span><br>
+        PORTB is an 8bit Register where you set the output level of the
+        terminals PB0 -- PB7. If a bit is 1, the voltage at the corresponding
+        terminal becomes HIGH, else it becomes LOW. Here we are making all the
+        terminals HIGH, means LED conected to any of them will glow.&nbsp; In a
+        similar manner you can use PORTA, PORTC and PORTD.<br>
+        <br>
+        <span style="font-weight: bold;">setReg(PORTB, 0)</span><br>
+        As explained above, PB0 to PB7 will be set to LOW.<br>
+        <br>
+        Running this loop makes the LEDs connected to any of the terminals PB0
+        to PB7 will blink. The frequency will be decide by the value given to
+        time.sleep()<br>
+        <br>
+        <br>
+        <br>
+      </div>
     </div>
   </body>
 </html>
