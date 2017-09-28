@@ -13,20 +13,25 @@
         <tbody>
           <tr>
             <td>
-              <div style="text-align: left;"><span style="font-family: Helvetica,Arial,sans-serif;">Control
-                  lamps, switches, motors and read voltages using small Python
-                  programs and a circuit board connected to the USB port.<br>
-                  The board provides 32 terminals that are organized in to 4
-                  groups, each having 8 terminals, namely A, B,C and D. <br>
-                  The individual terminals are marked as PA0 -- PA7 for port A,
-                  PB0 -- PB7 for port B etc.<br>
-                </span>
-                <div style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;">
-                    The terminals you are learning to manipulate belong to
-                    Atmega32 micro-controller, but we only consider them as a
-                    set of Registers accessible from Python. The user&nbsp; is
-                    expected to know Python and the binary number system.<br>
-                  </span></div>
+              <div style="text-align: left;">
+                <div style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;
+                    At least some of those who do computer programming may come
+                    across situations where it is required to switch a lamp on,
+                    rotate a motor or measure a temperature. Generally these
+                    things are done by connecting some extra hardware to the
+                    computer and coding it in C language. </span></div>
+                <span style="font-family: Helvetica,Arial,sans-serif;"></span>
+                <div style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;
+                    KuttyPy gives you an option to do those things in pure
+                    Python and the hardware used is a&nbsp; micro-controller
+                    board, that can be plugged to the USB port. </span><span style="font-family: Helvetica,Arial,sans-serif;"><span
+                      style="font-family: Helvetica,Arial,sans-serif;">The user
+                      is expected to know only elementary Python and binary
+                      numbers. </span>The micro-controller Ports will be
+                    treated as 8bit Registers that can be read and written from
+                    Python. </span>Working with the examples will lead also to
+                  some&nbsp;<span style="font-family: Helvetica,Arial,sans-serif;">
+                  </span>understanding about the micro-controller architecture.</div>
               </div>
             </td>
             <td style="text-align: left;">
@@ -38,6 +43,16 @@
         </tbody>
       </table>
       <span style="font-family: Helvetica,Arial,sans-serif;"> </span>
+      <p style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;"><span
+            style="font-family: Helvetica,Arial,sans-serif;">The hardware gives
+            32 terminals that are organized in to 4 groups, each having 8
+            terminals, namely A, B,C and D.&nbsp; </span>The individual
+          terminals are marked as PA0 -- PA7 for port A, PB0 -- PB7 for port B
+          etc. They can be controlled/monitored as a group or as individual
+          pins. The following example gives some idea about the system.</span></p>
+      <p style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;"><span
+            style="font-weight: bold;">Blinking LED </span><br>
+        </span></p>
       <p style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;">The
           simplest thing to start with is to control LEDs connected to any of
           the terminals. Connect an LED from PB0 to Ground with 5k resistor in
@@ -45,7 +60,6 @@
           Python program <a href="code/blink.py">blink.py</a>.</span></p>
       <div style="text-align: left;"><span style="font-family: Helvetica,Arial,sans-serif;">Let
           us examine the code line by line:<br>
-          <br>
           <span style="font-weight: bold;">from kuttyPy import *</span><br>
           This line imports the kuttyPy module ( kuttyPy.py should be in your
           working directory). This module gives you&nbsp; functions that can
