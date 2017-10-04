@@ -11,27 +11,30 @@
       <ul>
         <li><a href="../../Expt17/expts.html"><span>Experiments</span></a></li>
         <li><a href="../../design.html"> <span>Design</span></a></li>
-        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
-        <li><a href="../software.html"> <span>Software</span></a></li>
-        <li><a href="../android.html"> <span>Android</span></a></li>
-        <li><a href="../python.html"> <span>python</span></a></li>
-        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
-        <li><a href="../people.html"> <span>People</span></a></li>
-        <li><a href="../news.html"><span>News</span></a></li>
+        <li><a href="../../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../../software.html"> <span>Software</span></a></li>
+        <li><a href="../../android.html"> <span>Android</span></a></li>
+        <li><a href="../../python.html"> <span>python</span></a></li>
+        <li><a href="../../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../../people.html"> <span>People</span></a></li>
+        <li><a href="../../news.html"><span>News</span></a></li>
       </ul>
     </div>
     <h4>Half wave rectifier</h4>
-    <p>WG generates a sine wave. It is monitored by oscilloscope channel A1.
-      Signal after the diode is monitored by A2. The waveform is observed. It
-      will be a bit noisy without the load resistor, connecting a 1k resistor
-      gives a clean rectified waveform. The voltage drop across the diode is
-      clearly visible. Connect different values of capacitors to view the
-      filtering effect. </p>
-    <table style="width: 100%;" cellpadding="4" cellspacing="4" border="0">
+    <p>The waveform generator WG is set to give a sine wave of 1kHz. It is
+      monitored by oscilloscope channel A1. The signal after the diode is
+      monitored by A2. The observed waveform will be a bit noisy without the
+      load resistor, connecting a 1k resistor gives a clean rectified waveform.
+      The voltage drop across the diode is clearly visible. Connect different
+      values of capacitors to view the filtering effect. </p>
+    <table style="width: 1144px; height: 369px;" cellpadding="4" cellspacing="4"
+      border="0">
       <tbody>
         <tr>
-          <td><img style="width: 497px; height: 318px;" src="schematics/halfwave.svg"></td>
-          <td><img style="width: 554px; height: 312px;" src="photos/halfwave.jpg"></td>
+          <td style="width: 505.433px;"><img style="width: 497px; height: 318px;"
+              src="schematics/halfwave.svg"></td>
+          <td style="width: 1315.57px;"><img style="width: 554px; height: 312px;"
+              src="photos/halfwave.jpg"></td>
         </tr>
         <tr>
           <td>Wiring Diagram&nbsp;&nbsp; </td>
@@ -40,13 +43,61 @@
       </tbody>
     </table>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <br> &nbsp;&nbsp; <img src="screenshots/half-wave.png"><br>
-    Screen shot of the oscilloscope program showing input and output of half wave
-    rectifier.<br>
     <br>
+    <table style="width: 1147px; height: 589px;" border="1">
+      <tbody>
+        <tr>
+          <td><img src="screenshots/half-wave.png"></td>
+        </tr>
+        <tr>
+          <td>Screen shot of the oscilloscope program showing input and output
+            of half wave rectifier.&nbsp; 1N4148 diode at 1000Hz and 1kOhm load
+            resistor.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    Effect of Diode Junction Capacitance:<br>
+    <p>Every diode has a junction capacitance that acts like a capacitance
+      connected in parallel to the ideal PN junction. Junction capacitance of
+      1N4148 is only 4pF but 1N4007 has a junction capacitance of 20pF. The
+      rectified output, without external load resistor, for 1N4007 is shown
+      below. The 1MOhm input impedance of channel A2 will be always present.</p>
+    <br>
+    <img src="screenshots/halfwave1N4007at1000Hz.png"><br>
+    <br>
+    <span style="font-weight: bold;"><br>
+      Writing Python Code</span><br>
     This experiment can also be done by running this <a href="../code/capture2.py">Python
       Code</a>. The output of the program is shown below.<br>
-    <img style="width: 495px; height: 371px;" src="screenshots/halwave-mpl.png"><br>
+    <table style="width: 1090px; height: 410px;" border="1">
+      <tbody>
+        <tr>
+          <td>import eyes17.eyes<br>
+            p = eyes17.eyes.open()<br>
+            <br>
+            from pylab import *<br>
+            <br>
+            p.set_sine(200)<br>
+            t,v, tt,vv = p.capture2(500, 20)&nbsp;&nbsp; # captures A1 and A2<br>
+            <br>
+            xlabel('Time(mS)')<br>
+            ylabel('Voltage(V)')<br>
+            plot([0,10], [0,0], 'black')<br>
+            ylim([-4,4])<br>
+            plot(t,v,linewidth = 2, color = 'blue')<br>
+            plot(tt, vv, linewidth = 2, color = 'red')<br>
+            show()</td>
+          <td><img style="width: 495px; height: 371px;" src="screenshots/halwave-mpl.png"></td>
+        </tr>
+        <tr>
+          <td>Python program to study half wave rectifier</td>
+          <td>Output of the code</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
     &nbsp; <br>
     <br>
   </body>
