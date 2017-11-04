@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>index</title>
+  </head>
+  <body>
+    <div style="text-align: center;">
+      <h3><span style="font-family: Helvetica,Arial,sans-serif;">KuttyPy -
+          Connect to the outside world using Python</span></h3>
+      <span style="font-family: Helvetica,Arial,sans-serif;"> </span>
+      <table style="width: 100%;" cellpadding="4" border="0">
+        <tbody>
+          <tr>
+            <td>
+              <div style="text-align: left;">
+                <div style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;
+                    Computer programmers and hobbyists at times come across
+                    situations where they need to switch a light bulb, rotate a
+                    motor or measure a temperature under software control.
+                    Generally these things are done by connecting some extra
+                    hardware to the computer and coding it in C language.
+                    KuttyPy is a USB interfaced board that gives you an option
+                    to do those things in pure Python.<br>
+                    &nbsp; &nbsp; &nbsp;&nbsp; Playing with LEDs, motors,
+                    switches etc. is the primary objective of this hardware, but
+                    the experience gained in manipulating the 32 Input/Output
+                    pins of this board will gradually make you familiar with the
+                    ATMega32 micro-controller. That is only the secondary
+                    objective for a "kutty" (means child in some languages).<br>
+                    The hardware, firmware and software resources are <a href="https://github.com/expeyes/expeyes-programs/tree/master/kuttyPy">HERE</a>.</span></div>
+              </div>
+            </td>
+            <td style="text-align: left;">
+              <div style="text-align: left;"><span style="font-family: Helvetica,Arial,sans-serif;"><img
+                    style="width: 388px; height: 222px;" src="pics/pcb.png"></span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <span style="font-family: Helvetica,Arial,sans-serif;"> </span>
+      <p style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;"><span
+            style="font-family: Helvetica,Arial,sans-serif;">The board provides
+            32 terminals that are organized in to 4 groups, each having 8
+            terminals, namely A, B,C and D.&nbsp; </span>The individual
+          terminals are marked as PA0 -- PA7 for port A, PB0 -- PB7 for port B
+          etc. They can be controlled/monitored as a group or as individual
+          pins. The following example gives some idea about the system.</span></p>
+      <p style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;"><span
+            style="font-weight: bold;">Blinking LED </span><br>
+        </span></p>
+      <p style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;">The
+          simplest thing to start with is to control LEDs connected to any of
+          the terminals. Connect an LED from PB0 to Ground with 5k resistor in
+          series, for current limiting. The LED should blink when you run the
+          Python program <a href="code/blink.py">blink.py</a>.</span></p>
+      <div style="text-align: left;"><span style="font-family: Helvetica,Arial,sans-serif;">Let
+          us examine the code line by line:<br>
+          <span style="font-weight: bold;">from kuttyPy import *</span><br>
+          This line imports the kuttyPy module ( kuttyPy.py should be in your
+          working directory). This module gives you&nbsp; functions that can
+          read/write the Registers of the micro-controller connected to the USB
+          port.&nbsp; This line also searches for the hardware on the available
+          USB ports. If nothing found, the program is terminated.<br>
+          <br>
+          <span style="font-weight: bold;">setReg(DDRB,255)</span><br>
+          DDRB is an 8bit Register that decides the direction of the terminals
+          PB0 -- PB7. If a bit is 1, the corresponding terminal becomes an
+          output. If it is zero, the terminal becomes an input. DDR stands for
+          Data Direction Register. The last letter represents the port, for
+          example DDRA decides the direction of port A.<br>
+          <br>
+          time.sleep(1)&nbsp;&nbsp; , for a one second wait<br>
+          <br>
+          <span style="font-weight: bold;">setReg(PORTB,255)</span><br>
+          PORTB is an 8bit Register where you set the output level of the
+          terminals PB0 -- PB7. If a bit is 1, the voltage at the corresponding
+          terminal becomes HIGH, else it becomes LOW. Here we are making all the
+          terminals HIGH, means LED conected to any of them will glow.&nbsp; In
+          a similar manner you can use PORTA, PORTC and PORTD.<br>
+          <br>
+          <span style="font-weight: bold;">setReg(PORTB, 0)</span><br>
+          As explained above, PB0 to PB7 will be set to LOW.<br>
+          <br>
+          Running this loop makes the LEDs connected to any of the terminals PB0
+          to PB7 will blink. The frequency will be decided by the delay
+          specified in time.sleep()<br>
+          <br>
+          <span style="font-weight: bold;">More Examples</span><br>
+          <a href="code/stepper.py"> stepper.py</a>&nbsp; :&nbsp; Rotate a
+          stepper motor by controlling the coils from PA0 -- PA3</span><br>
+        <br>
+        More examples to be added soon.<br>
+        <br>
+        bpajith at gmail.com <br>
+        <br>
+        <br>
+      </div>
+    </div>
+  </body>
+</html>
