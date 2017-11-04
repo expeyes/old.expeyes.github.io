@@ -43,7 +43,7 @@
       &nbsp; $ sudo sh postinst.sh </blockquote>
     <h3>Running from a Live CD</h3>
     <blockquote>
-      <p>Download the <a href="http://www.iuac.res.in/%7Eelab/expeyes-16.04-v3.iso">ISO
+      <p>Download the <a href="http://www.iuac.res.in/%7Eelab/expeyes-16.04-v4.iso">ISO
           image</a> , that is a modified version of Ubuntu 16.04.&nbsp;MSWindows
         users may download the program <a href="https://rufus.akeo.ie/downloads/rufus-2.15.exe">rufus</a>
         and use that to make a USB pendrive bootable with this ISO image. After
@@ -57,59 +57,60 @@
       </p>
     </blockquote>
     <h3><span style="color: #0a0a0a;">Installing on</span> MS Windows</h3>
-
     <blockquote>
-    <p><strong>Bundled Installer</strong> : Download and install the software <a href="https://drive.google.com/file/d/0B-Zqgt0_c1zDMUY1elo0LXF3Zmc/view?usp=sharing">Expeyes17Setup.exe</a>, and simply launch the software from the menu</p>
-
-    <h4>Or, Install Python and the required modules to run the ExpEYES17 code</h4>
-
-    <p> Since the programs are written in Python, the same source code works on
-      GNU/Linux and Windows. In order to run from source, you need to install
-      Python Interpreter and the required libraries. The USB device appears as
-      an RS232 connection to the software. The virtual COM port is established
-      by the driver software for the USB to Serial converter MCP2200. You need
-      to install:</p>
-    <blockquote>
-      <ul>
-        <li> MCP2200 Driver</li>
-        <li>Python Interpreter version 2.7xx</li>
-        <li>Python Serial module</li>
-        <li>Python Qt version 4</li>
-        <li>Python Imaging Library module</li>
-        <li>Scipy and Numpy modules</li>
-      </ul>
-    </blockquote>
-    For expeyes junior, download <a href="Code/eyes-junior.zip">eyes-junior.zip</a>
-    and run the program croplus.py
-    <p>For expeyes-17, download <a href="Documents/eyes17.zip">eyes17.zip</a>
-      and run the program&nbsp; main.py </p>
-    <hr style="color: black;">
-    <p><span style="font-weight: bold;">ExpEYES Junior </span></p>
-    <blockquote>
-      <p>Software for expeyes junior is part of Ubuntu since version 14.04. You
-        may install it by:</p>
-      <p>$ sudo apt-get install
-        expeyes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; or by using
-        any GUI installers</p>
-      <p>For Ubuntu versions 10.04 to 12.10 you may use <a href="Documents/expeyes-ub-10.04-4.0.0.deb">this
-          deb file</a>. </p>
-    </blockquote>
-    <h4>On Other GNU/Linux Distributions</h4>
-    <blockquote>
-      <p> Download <a href="Code/eyes-junior.zip">eyes-junior.zip</a> and do
-        the following: </p>
-      <p>$unzip eyes-junior.zip</p>
-      <p>$ cd eyes-junior</p>
-      <p>$ sudo python croplus.py</p>
-      To use the device as a normal user, <a href="Code/postinst.sh">download
-        the file</a> to set the USB permissions by running.<br>
-      <br>
-      &nbsp; $ sudo sh postinst.sh </blockquote>
-    <span style="font-weight: bold;">Windows version of the EYES Junior program</span><br>
-    <blockquote> A native Windows program is also available for expeyes junior.
-      It includes the main oscilloscope application and several experiments.
-      More details are <a href="http://expeyes.000webhostapp.com/">HERE</a>.<br>
-      <br>
+      <p><strong>Bundled Installer</strong> : Download and install the software
+        <a href="https://drive.google.com/file/d/0B-Zqgt0_c1zDMUY1elo0LXF3Zmc/view?usp=sharing">Expeyes17Setup.exe</a>,
+        and simply launch the software from the menu</p>
+      <h4>Or, Install Python and the required modules to run the ExpEYES17 code</h4>
+      <p> Since the programs are written in Python, the same source code works
+        on GNU/Linux and Windows. In order to run from source, you need to
+        install Python Interpreter and the required libraries. The USB device
+        appears as an RS232 connection to the software. The virtual COM port is
+        established by the driver software for the USB to Serial converter
+        MCP2200. You need to install:</p>
+      <blockquote>
+        <ul>
+          <li> MCP2200 Driver</li>
+          <li>Python Interpreter version 2.7xx</li>
+          <li>Python Serial module</li>
+          <li>Python Qt version 4</li>
+          <li>Python Imaging Library module</li>
+          <li>Scipy and Numpy modules</li>
+        </ul>
+      </blockquote>
+      For expeyes junior, download <a href="Code/eyes-junior.zip">eyes-junior.zip</a>
+      and run the program croplus.py
+      <p>For expeyes-17, download <a href="Documents/eyes17.zip">eyes17.zip</a>
+        and run the program&nbsp; main.py </p>
+      <hr style="color: black;">
+      <p><span style="font-weight: bold;">ExpEYES Junior </span></p>
+      <blockquote>
+        <p>Software for expeyes junior is part of Ubuntu since version 14.04.
+          You may install it by:</p>
+        <p>$ sudo apt-get install
+          expeyes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; or by using
+          any GUI installers</p>
+        <p>For Ubuntu versions 10.04 to 12.10 you may use <a href="Documents/expeyes-ub-10.04-4.0.0.deb">this
+            deb file</a>. </p>
+      </blockquote>
+      <h4>On Other GNU/Linux Distributions</h4>
+      <blockquote>
+        <p> Download <a href="Code/eyes-junior.zip">eyes-junior.zip</a> and do
+          the following: </p>
+        <p>$unzip eyes-junior.zip</p>
+        <p>$ cd eyes-junior</p>
+        <p>$ sudo python croplus.py</p>
+        To use the device as a normal user, <a href="Code/postinst.sh">download
+          the file</a> to set the USB permissions by running.<br>
+        <br>
+        &nbsp; $ sudo sh postinst.sh </blockquote>
+      <span style="font-weight: bold;">Windows version of the EYES Junior
+        program</span><br>
+      <blockquote> A native Windows program is also available for expeyes
+        junior. It includes the main oscilloscope application and several
+        experiments. More details are <a href="http://expeyes.000webhostapp.com/">HERE</a>.<br>
+        <br>
+      </blockquote>
     </blockquote>
   </body>
 </html>
