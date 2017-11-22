@@ -20,12 +20,12 @@
         <li><a href="../../news.html"><span>News</span></a></li>
       </ul>
     </div>
-    <h4> Diode Clipping</h4>
+    <h4> Diode Clamping</h4>
     <p>The waveform generator WG is set to give a sine wave of 1kHz. It is
       monitored by oscilloscope channel A1. The signal after the 1uF capacitor
-      is monitored by A2. The DC voltage to clamp the sine wave is from PV1, via
-      a diode. Set the voltage range of A2 to 16 volts, because the voltage
-      after clamping at 5 volts DC could be more that 8 volts.</p>
+      is monitored by A2. The DC voltage to clamp the sine wave is given from
+      PV1, via a diode. Set the voltage range of A2 to 16 volts, because the
+      voltage after clamping at 5 volts DC could be more that 8 volts.</p>
     <table style="width: 1106px; height: 369px;" cellpadding="4" cellspacing="4"
       border="0">
       <tbody>
@@ -51,8 +51,8 @@
         </tr>
         <tr>
           <td>Screen shot of the oscilloscope program showing inputs and output
-            of Positive Diode Clipping.&nbsp; 1N4148 diode at 1000Hz and 1kOhm
-            load resistor.</td>
+            of Positive Diode Clamping.&nbsp; 1N4148 diode at 1000Hz. Load is
+            the 1MOhm input impedance of channel A2.</td>
         </tr>
       </tbody>
     </table>
@@ -69,7 +69,7 @@
             from pylab import *<br>
             <br>
             p.set_sine(200)<br>
-            p.set_pv1(1.35) # will clip at 1.35 + diode drop <br>
+            p.set_pv1(1.35)&nbsp;&nbsp;&nbsp; <br>
             t,v, tt,vv = p.capture2(500, 20) # captures A1 and A2<br>
             <br>
             xlabel('Time(mS)') <br<> ylabel('Voltage(V)')<br>
@@ -82,7 +82,7 @@
           <td><img style="width: 495px; height: 371px;" src="screenshots/clamping-mpl.png"></td>
         </tr>
         <tr>
-          <td>Python program to Diode Clipping</td>
+          <td>Python program to Diode Clamping</td>
           <td>Output of the code</td>
         </tr>
       </tbody>

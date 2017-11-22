@@ -1,14 +1,90 @@
-﻿<h2 id="schematic">Schematic</h2>
-<hr>
-<p><img src="images/opamp-noninv.png" alt=""></p>
-<h2 id="instructions">Instructions</h2>
-<hr>
-<ul>
-<li>Use the Oscilloscope to test the Non-Inverting Amplifier.</li>
-<li>Make the connections on a breadboard.</li>
-<li>Enable A1, A2 and their analysis option</li>
-<li>Set WG amplitude to 80 mV.</li>
-<li>Set the range of A1 to 0.5 V and range of A2 to 4V.</li>
-<li>Monitor the traces.</li>
-<li>Change the gain by changing one of the resistors. Gain = 1 + Rf/Ri</li>
-</ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../../css/menu.css">
+    <title>Inverting Amplifier</title>
+  </head>
+  <body> <a href="../../index.html"><img src="../../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../../design.html"> <span>Design</span></a></li>
+        <li><a href="../../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../../software.html"> <span>Software</span></a></li>
+        <li><a href="../../android.html"> <span>Android</span></a></li>
+        <li><a href="../../python.html"> <span>python</span></a></li>
+        <li><a href="../../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../../people.html"> <span>People</span></a></li>
+        <li><a href="../../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h4>Inverting Amplifier</h4>
+    <p>The schematic is wired as shown in the diagram below. Ri = 1k and Rf =
+      10k. The WG amplitude is set to 80 mV, you may try a 1 volt input to
+      observe the clipping of the the output, since it exceeds the supply
+      voltage of +/- 6 volts.</p>
+    <table style="width: 1106px; height: 369px;" cellpadding="4" cellspacing="4"
+      border="0">
+      <tbody>
+        <tr>
+          <td style="width: 372px;"><img style="width: 372px; height: 271px;" src="schematics/opamp-inv.svg"><br>
+          </td>
+          <td style="width: 660px;"><img style="width: 710px; height: 422px;" alt=""
+              src="photos/opamp-inv.jpg"></td>
+        </tr>
+        <tr>
+          <td>Wiring Diagram&nbsp;&nbsp; </td>
+          <td>Photograph of the experimental setup. Used OP07 (pin configuration
+            of uA741)</td>
+        </tr>
+      </tbody>
+    </table>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <table style="width: 935px; height: 636px;" border="1">
+      <tbody>
+        <tr>
+          <td><img alt="" src="screenshots/opamp-inv.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Screen shot of the oscilloscope program showing inputs and output
+            of an Inverting Amplifier. Gain is -10</td>
+        </tr>
+      </tbody>
+    </table>
+    <span style="font-weight: bold;"><br>
+      Writing Python Code</span><br>
+    This experiment can also be done by running this <a href="../code/capture2.py">Python
+      Code</a>. The output of the program is shown below.<br>
+    <table style="width: 1090px; height: 410px;" border="1">
+      <tbody>
+        <tr>
+          <td>import eyes17.eyes<br>
+            p = eyes17.eyes.open()<br>
+            <br>
+            from pylab import *<br>
+            <br>
+            p.set_sine(200)<br>
+            p.set_pv1(1.35) # will clip at 1.35 + diode drop <br>
+            t,v, tt,vv = p.capture2(500, 20) # captures A1 and A2<br>
+            <br>
+            xlabel('Time(mS)') <br<> ylabel('Voltage(V)')<br>
+              plot([0,10], [0,0], 'black')<br>
+              ylim([-4,4])<br>
+              <br>
+              plot(t,v,linewidth = 2, color = 'blue')<br>
+              plot(tt, vv, linewidth = 2, color = 'red')<br?> <br>
+                show() </br?></br<></td>
+          <td><img style="width: 495px; height: 371px;" src="screenshots/opamp-inv-mpl.png"></td>
+        </tr>
+        <tr>
+          <td>Python program to capture and display A1 and A2</td>
+          <td>Output of the code</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
