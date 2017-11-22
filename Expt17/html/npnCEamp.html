@@ -20,20 +20,22 @@
         <li><a href="../../news.html"><span>News</span></a></li>
       </ul>
     </div>
-    <h4>NPN Transistor output characteristics in CE mode </h4>
-    <p>The schematic is wired as shown in the diagram below. The base current is
-      set by the voltage from PV2, through a 100k resistor. The base voltage is
-      measured to calculate the base current from Ib = (PV2-A2)/100K. The
-      collector voltage is monitored by A1. The collector is connected to PV1,
-      through a 1k resistor. For a selected base current, the voltage at PV1 is
-      incremented in steps and at each step the collector voltage is measured.
-      Corresponding collector current is calculated from i = (PV1-A1)/R. The
-      transistor&nbsp; used is 2N2222, having a current gain of around 200.</p>
+    <h4>NPN Transistor Amplifier, CE configuration</h4>
+    <p>The schematic is wired as shown in the diagram below. It is very similar
+      to the schematic used for drawing the output characteristics. The AC
+      signal is connected to the base, through a capacitor so that the biasing
+      is not affected. Since the gain is high, we need a small input signal,
+      smaller than the 80 mV available from WG. A divider network using 1k and
+      10k gives&nbsp; 7 mV output and that is fed to the base. This input signal
+      is monitored on A3. The 7 mV signal is difficult to view even in the .5
+      volt scale. So a gain resistor Rg=1k is used for amplifying the input to
+      A3 so that can be viewed better.<br>
+    </p>
     <table style="width: 1106px; height: 369px;" cellpadding="4" cellspacing="4"
       border="0">
       <tbody>
         <tr>
-          <td style="width: 372px;"><img style="width: 372px; height: 270px;" src="schematics/npn_ce_out.svg"><br>
+          <td style="width: 372px;"><img style="width: 415px; height: 301px;" src="schematics/npn_ce_amp.svg"><br>
           </td>
           <td style="width: 660px;"><img style="width: 619px; height: 355px;" src="photos/npnCEout.png"><br>
           </td>
@@ -49,14 +51,16 @@
     <table style="width: 935px; height: 636px;" border="1">
       <tbody>
         <tr>
-          <td><img src="screenshots/npn-screenshot.png"><br>
+          <td><br>
           </td>
         </tr>
         <tr>
-          <td>Screen shot of Diode IV characteristic</td>
+          <td>Screen shot of Transistor Amplifier</td>
         </tr>
       </tbody>
     </table>
     <span style="font-weight: bold;"></span><br>
+    <br>
+    <br>
   </body>
 </html>
