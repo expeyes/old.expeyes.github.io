@@ -1,15 +1,91 @@
-﻿<h2 id="schematic">Schematic</h2>
-<hr>
-<p><img src="images/clamping.png" alt=""></p>
-<ul>
-<li>A clamping circuit is used to place either the positive or negative peak of a signal
-at a desired level.</li>
-<li>The dc component is simply added or subtracted to/from
-the input signal.</li>
-</ul>
-<h2 id="instructions">Instructions</h2>
-<hr>
-<p>Make connections as :</p>
-<ul>
-<li>Adjust PV1 to change the clamping point.</li>
-</ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../../css/menu.css">
+    <title>Diode Clamping</title>
+  </head>
+  <body> <a href="../../index.html"><img src="../../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../../design.html"> <span>Design</span></a></li>
+        <li><a href="../../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../../software.html"> <span>Software</span></a></li>
+        <li><a href="../../android.html"> <span>Android</span></a></li>
+        <li><a href="../../python.html"> <span>python</span></a></li>
+        <li><a href="../../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../../people.html"> <span>People</span></a></li>
+        <li><a href="../../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h4> Diode Clipping</h4>
+    <p>The waveform generator WG is set to give a sine wave of 1kHz. It is
+      monitored by oscilloscope channel A1. The signal after the 1uF capacitor
+      is monitored by A2. The DC voltage to clamp the sine wave is from PV1, via
+      a diode. Set the voltage range of A2 to 16 volts, because the voltage
+      after clamping at 5 volts DC could be more that 8 volts.</p>
+    <table style="width: 1106px; height: 369px;" cellpadding="4" cellspacing="4"
+      border="0">
+      <tbody>
+        <tr>
+          <td style="width: 505.433px;"><img style="width: 497px; height: 318px;"
+              src="schematics/clamping.svg"></td>
+          <td style="width: 1315.57px;"><img style="width: 554px; height: 312px;"
+              src="photos/clampimg.jpg"></td>
+        </tr>
+        <tr>
+          <td>Wiring Diagram&nbsp;&nbsp; </td>
+          <td>Photograph of the experimental setup</td>
+        </tr>
+      </tbody>
+    </table>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <table style="width: 935px; height: 636px;" border="1">
+      <tbody>
+        <tr>
+          <td><img src="screenshots/clamping.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Screen shot of the oscilloscope program showing inputs and output
+            of Positive Diode Clipping.&nbsp; 1N4148 diode at 1000Hz and 1kOhm
+            load resistor.</td>
+        </tr>
+      </tbody>
+    </table>
+    <span style="font-weight: bold;"><br>
+      Writing Python Code</span><br>
+    This experiment can also be done by running this <a href="../code/capture2.py">Python
+      Code</a>. The output of the program is shown below.<br>
+    <table style="width: 1090px; height: 410px;" border="1">
+      <tbody>
+        <tr>
+          <td>import eyes17.eyes<br>
+            p = eyes17.eyes.open()<br>
+            <br>
+            from pylab import *<br>
+            <br>
+            p.set_sine(200)<br>
+            p.set_pv1(1.35) # will clip at 1.35 + diode drop <br>
+            t,v, tt,vv = p.capture2(500, 20) # captures A1 and A2<br>
+            <br>
+            xlabel('Time(mS)') <br<> ylabel('Voltage(V)')<br>
+              plot([0,10], [0,0], 'black')<br>
+              ylim([-4,4])<br>
+              <br>
+              plot(t,v,linewidth = 2, color = 'blue')<br>
+              plot(tt, vv, linewidth = 2, color = 'red')<br?> <br>
+                show() </br?></br<></td>
+          <td><img style="width: 495px; height: 371px;" src="screenshots/clamping-mpl.png"></td>
+        </tr>
+        <tr>
+          <td>Python program to Diode Clipping</td>
+          <td>Output of the code</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
