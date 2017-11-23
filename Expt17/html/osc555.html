@@ -21,20 +21,19 @@
       </ul>
     </div>
     <h4> IC555 Astable Multi-vibrator</h4>
-    <p>The schematic is wired as shown in the diagram below. The capacitor from
-      pin5 to ground is optional. The output of 555 is monitored on channel A1,
-      and also connected to IN2 for frequency and duty cycle measurement. The 5
-      volt power can be taken from the +5V socket or from OD1 (need to enable
-      OD1). The charging waveform may be monitored on A2.</p>
-    <table style="width: 1106px; height: 369px;" cellpadding="4" cellspacing="4"
+    <p>The schematic is wired as shown in the diagram below. The output of 555
+      is monitored on channel A1, and also connected to IN2 for frequency and
+      duty cycle measurement. The 5 volt power can be taken from the +5V socket
+      or from OD1 (need to enable OD1). The charging waveform may be monitored
+      on A2. The capacitor from pin5 to ground is for noise reduction.&nbsp;</p>
+    <table style="width: 1169px; height: 452px;" cellpadding="4" cellspacing="4"
       border="0">
       <tbody>
         <tr>
-          <td style="width: 505.433px;"><img style="width: 372px; height: 271px;"
-              alt="" src="schematics/osc555.svg"><br>
+          <td style="width: 365px;"><img alt="" src="schematics/osc555.svg"><br>
           </td>
-          <td style="width: 1315.57px;"><br>
-          </td>
+          <td style="width: 666.533px; height: 405.217px;"><img style="width: 696px; height: 395px;"
+              alt="" src="photos/osc555.jpg"></td>
         </tr>
         <tr>
           <td>Wiring Diagram&nbsp;&nbsp; </td>
@@ -42,51 +41,22 @@
         </tr>
       </tbody>
     </table>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <br>
+    &nbsp; <br>
+    We have used R1 = 2.2K, R2 = 1K, C = 1uF&nbsp; . The calculated frequency
+    and duty cycle are 343.6 Hz and 76.2%.&nbsp; <br>
+    The measured values are shown in the figure below.<br>
     <table style="width: 935px; height: 636px;" border="1">
       <tbody>
         <tr>
-          <td><br>
+          <td><img alt="" src="screenshots/osc555.png"><br>
           </td>
         </tr>
         <tr>
-          <td>Screen shot of the oscilloscope program showing inputs and output
-            of Positive Diode Clamping.&nbsp; 1N4148 diode at 1000Hz. Load is
-            the 1MOhm input impedance of channel A2.</td>
+          <td>Screen shot of the oscilloscope program showing the IC555 output.
+            The voltage across the capacitor is shown on A2.</td>
         </tr>
       </tbody>
     </table>
-    <span style="font-weight: bold;"><br>
-      Writing Python Code</span><br>
-    This experiment can also be done by running this <a href="../code/capture2.py">Python
-      Code</a>. The output of the program is shown below.<br>
-    <table style="width: 1090px; height: 410px;" border="1">
-      <tbody>
-        <tr>
-          <td>import eyes17.eyes<br>
-            p = eyes17.eyes.open()<br>
-            <br>
-            from pylab import *<br>
-            <br>
-            p.set_sine(200)<br>
-            p.set_pv1(1.35) # will clip at 1.35 + diode drop <br>
-            t,v, tt,vv = p.capture2(500, 20) # captures A1 and A2<br>
-            <br>
-            xlabel('Time(mS)') <br<> ylabel('Voltage(V)')<br>
-              plot([0,10], [0,0], 'black')<br>
-              ylim([-4,4])<br>
-              <br>
-              plot(t,v,linewidth = 2, color = 'blue')<br>
-              plot(tt, vv, linewidth = 2, color = 'red')<br?> <br>
-                show() </br?></br<></td>
-          <td><img style="width: 495px; height: 371px;" src="screenshots/clamping-mpl.png"></td>
-        </tr>
-        <tr>
-          <td>Python program to Diode Clamping</td>
-          <td>Output of the code</td>
-        </tr>
-      </tbody>
-    </table>
+    <span style="font-weight: bold;"></span><br>
   </body>
 </html>

@@ -32,7 +32,7 @@ File "osc555.ps" Page 1
 <g transform="matrix(   1    0   -0    1 272 307)" fill="#000000" >
 <text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">6</tspan>
 </text></g>
-<g transform="matrix(   1    0   -0    1 272 435)" fill="#000000" >
+<g transform="matrix(   1    0   -0    1 272 371)" fill="#000000" >
 <text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">2</tspan>
 </text></g>
 <g transform="matrix(   1    0   -0    1 400 243)" fill="#000000" >
@@ -41,7 +41,7 @@ File "osc555.ps" Page 1
 <g transform="matrix(   1    0   -0    1 400 403)" fill="#000000" >
 <text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">5</tspan>
 </text></g>
-<g transform="matrix(   1    0   -0    1 352 451)" fill="#000000" >
+<g transform="matrix(   1    0   -0    1 336 451)" fill="#000000" >
 <text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">1</tspan>
 </text></g>
 <path d="M176,291 L176,263 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
@@ -80,20 +80,20 @@ File "osc555.ps" Page 1
 <path d="M464,227 C465,227 544,227 608,291 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
 <path d="M480,227 C481,227 560,131 608,179 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
 <g transform="matrix(   1    0   -0    1  96 435)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="-34" y="0">.1uF</tspan>
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="-29" y="0">1uF</tspan>
 </text></g>
 <g transform="matrix(   1    0   -0    1  96 243)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="-31" y="0">10K</tspan>
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="-20" y="0">1K</tspan>
 </text></g>
 <g transform="matrix(   1    0   -0    1 112 115)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="-31" y="0">10K</tspan>
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="-41" y="0">2.2K</tspan>
 </text></g>
 <path d="M176,355 C177,355 128,291 64,323 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
 <path d="M0,291 L0,339 64,339 64,291 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
 <g transform="matrix(   1    0   -0    1  32 323)" fill="#000000" >
 <text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="-26" y="0">A2</tspan>
 </text></g>
-<g transform="matrix(   1    0   -0    1 352 339)" fill="#000000" >
+<g transform="matrix(   1    0   -0    1 368 339)" fill="#000000" >
 <text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="-53" y="0">IC555</tspan>
 </text></g>
 </g>
