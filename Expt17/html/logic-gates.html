@@ -1,12 +1,133 @@
-﻿<h2 id="schematic">Schematic</h2>
-<hr>
-<p><img src="images/and-gate.png" alt=""></p>
-<h2 id="instructions">Instructions</h2>
-<hr>
-<ul>
-<li>Make the connetions, on a breadboard. </li>
-<li>Select SQR2 from the WG Shape menu.</li>
-<li>Set the input range of both A1 and A2 to 8 volts.</li>
-<li>Set SQ1 to 500 Hz, and WG to 1000 Hz</li>
-<li>Watch the inputs on A1 and A1. Output on A3</li>
-</ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../../css/menu.css">
+    <title>Logic Gates</title>
+  </head>
+  <body> <a href="../../index.html"><img src="../../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../../design.html"> <span>Design</span></a></li>
+        <li><a href="../../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../../software.html"> <span>Software</span></a></li>
+        <li><a href="../../android.html"> <span>Android</span></a></li>
+        <li><a href="../../python.html"> <span>python</span></a></li>
+        <li><a href="../../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../../people.html"> <span>People</span></a></li>
+        <li><a href="../../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h4> Study of Logic gates</h4>
+    <p>The 5 volt DC power for the IC (74LS08) can be taken from the +5V socket
+      or from OD1 (need to enable OD1). The inputs are connected to the square
+      waves SQ1 and SQ2. The wave generator WG should be set to SQ2 option. The
+      output is connected to A3 (via a series resistor because the range of A3
+      is 3.3 volts only). The voltage ranges of A1 and A2 are set to 16 volts
+      and they are shifted for a clear view, by avoiding overlapping of traces.</p>
+    <table style="width: 1169px; height: 452px;" cellpadding="4" cellspacing="4"
+      border="0">
+      <tbody>
+        <tr>
+          <td style="width: 456.983px;"><img src="schematics/logic-gates.svg"><br>
+          </td>
+          <td style="height: 405.217px; width: 684.017px;"><img style="width: 613px; height: 344px;"
+              alt="" src="photos/and-gate.jpg"></td>
+        </tr>
+        <tr>
+          <td>Wiring Diagram&nbsp;&nbsp; </td>
+          <td>Photograph of the experimental setup</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    The yellow and green traces are inputs and red is the output. It can be seen
+    that the output is HIGH only when both the inputs are HIGH.<br>
+    <br>
+    <table style="width: 935px; height: 636px;" border="1">
+      <tbody>
+        <tr>
+          <td><img src="screenshots/andgate.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Screen shot of the input and output signals for an AND gate
+            (74LS74)</td>
+        </tr>
+      </tbody>
+    </table>
+    <span style="font-weight: bold;"></span><br>
+    <span style="font-weight: bold;">AND Gate using Diodes</span><br>
+    The AND gate can be implemented using two diodes, as shown in the figure
+    below. If any of the inputs goes LOW, the diode conducts and the voltage at
+    the junction goes LOW.<br>
+    <table style="width: 1180px; height: 397px;" border="1">
+      <tbody>
+        <tr>
+          <td style="width: 509.38px;"><img style="width: 498px; height: 337px;"
+              alt="" src="schematics/diode-and-gate.svg"><br>
+          </td>
+          <td style="width: 699.614px;"><img style="width: 644px; height: 358px;"
+              alt="" src="photos/diode-and-gate.jpg"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Wiring Diagram</td>
+          <td>Photograph of the setup</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table style="width: 1182px; height: 639px;" border="1">
+      <tbody>
+        <tr align="center">
+          <td><img alt="" src="file:///home/ajith/GIT/expeyes.github.io/Expt17/html/screenshots/diode-and-gate.png"></td>
+        </tr>
+        <tr align="center">
+          <td>Screen shot of the AND gate implemented using two diodes (1N4148)</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <span style="font-weight: bold;">OR Gate</span><br>
+    The waveforms for the 74LS32 OR gate&nbsp; is also shown below. The ICs are
+    pin compatible, you only need to replace the IC. The <br>
+    <img alt="" src="screenshots/orgate.png"><br>
+    <br>
+    <span style="font-weight: bold;">OR Gate using Diodes<br>
+    </span>The OR gate can be implemented as shown below. If any of the inputs
+    goes HIGH the output becomes HIGH.<br>
+    <table style="width: 1192px; height: 411px;" border="1">
+      <tbody>
+        <tr>
+          <td><img style="width: 488px; height: 331px;" alt="" src="schematics/diode-or-gate.svg"><br>
+          </td>
+          <td><img style="width: 614px; height: 339px;" src="photos/diode-or-gate.jpg"></td>
+        </tr>
+        <tr>
+          <td>wiring diagram</td>
+          <td>Photograph of the setup</td>
+        </tr>
+      </tbody>
+    </table>
+    <span style="font-weight: bold;"><br>
+    </span>
+    <table style="width: 100%" border="1">
+      <tbody>
+        <tr>
+          <td><img alt="" src="screenshots/diode-or-gate.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Screenshot of the OR gate implemented using two diodes.</td>
+        </tr>
+      </tbody>
+    </table>
+    <span style="font-weight: bold;"><br>
+      <br>
+      <br>
+    </span>
+  </body>
+</html>

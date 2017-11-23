@@ -26,18 +26,22 @@
       signal is connected to the base, through a capacitor so that the biasing
       is not affected. Since the gain is high, we need a small input signal,
       smaller than the 80 mV available from WG. A divider network using 1k and
-      10k gives&nbsp; 7 mV output and that is fed to the base. This input signal
-      is monitored on A3. The 7 mV signal is difficult to view even in the .5
-      volt scale. So a gain resistor Rg=1k is used for amplifying the input to
-      A3 so that can be viewed better.<br>
-    </p>
+      2.2k gives&nbsp; around 20 mV output and that is fed to the base. This
+      input signal is monitored on A2.&nbsp; The DC operating point is decided
+      by the voltage applied to the base through the 100k resistor. By adjusting
+      PV2, we can take the transistor between cut-off and saturation conditions.
+      The value of PV2 is adjusted to get an output with minimum distortion. To
+      improve it further, one can reduce the input signal, use a higher
+      collector supply voltage instead of PV1, or use a transistor with a lower
+      gain value. </p>
+    <span style="color: #0a0a0a;">&nbsp;</span>
     <table style="width: 1106px; height: 369px;" cellpadding="4" cellspacing="4"
       border="0">
       <tbody>
         <tr>
           <td style="width: 372px;"><img style="width: 415px; height: 301px;" src="schematics/npn_ce_amp.svg"><br>
           </td>
-          <td style="width: 660px;"><img style="width: 619px; height: 355px;" src="photos/npnCEout.png"><br>
+          <td style="width: 660px;"><img style="width: 631px; height: 355px;" src="photos/npn-ce-amp.jpg"><br>
           </td>
         </tr>
         <tr>
@@ -51,11 +55,12 @@
     <table style="width: 935px; height: 636px;" border="1">
       <tbody>
         <tr>
-          <td><br>
+          <td><img alt="" src="screenshots/npn-ce-amp.png"><br>
           </td>
         </tr>
         <tr>
-          <td>Screen shot of Transistor Amplifier</td>
+          <td>Screen shot of the input and output waveforms of Transistor
+            Amplifier in CE configuration</td>
         </tr>
       </tbody>
     </table>

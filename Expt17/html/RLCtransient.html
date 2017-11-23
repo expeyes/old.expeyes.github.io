@@ -1,20 +1,66 @@
-﻿<h2 id="schematic">Schematic</h2>
-<hr>
-<p><img src="images/RLCtransient.png" alt=""></p>
-<ul>
-<li>To study the transient response on a series LCR circuit,
-we connect them as shown in the figure and apply a zero to 5 volts step,
-and capture the resulting change in voltage across the capacitor.</li>
-<li>There could be three types of responses; over damped, under damped
-or criticaly damped depending on the C/L ratio and value of R.</li>
-</ul>
-<h2 id="instructions">Instructions</h2>
-<hr>
-<ul>
-<li>Use a 0.1 uF capacitor and the coil provided with ExpEYES.</li>
-<li>The result is under damped, it can be compared with the equation
-<strong>V(t) = V0 * sin(2<em>pi</em>t) * exp(-dt)</strong>, to obtain the resonant frequency
-and damping factor.</li>
-<li>Add series resistor to increase damping. </li>
-<li>Change C to 1uf and repeat.</li>
-</ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../../css/menu.css">
+    <title>RLC transient response</title>
+  </head>
+  <body> <a href="../../index.html"><img src="../../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../../design.html"> <span>Design</span></a></li>
+        <li><a href="../../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../../software.html"> <span>Software</span></a></li>
+        <li><a href="../../android.html"> <span>Android</span></a></li>
+        <li><a href="../../python.html"> <span>python</span></a></li>
+        <li><a href="../../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../../people.html"> <span>People</span></a></li>
+        <li><a href="../../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <br>
+    <span style="font-weight: bold;">Transient response of RLC circuit</span><br>
+    <br>
+    In this section, we explore the transient response of a series RLC circuit
+    by applying voltage step and capturing the voltage variation across the
+    capacitor. The coil used is 3000 turns of 44SWG wire. The inductance is
+    around 120 mH and the resistance is around 550 Ohms. The capacitance value
+    is 0.1 uF.<br>
+    <br>
+    <span style="color: #0a0a0a;"></span><br>
+    <table style="width: 1106px; height: 369px;" cellpadding="4" cellspacing="4"
+      border="0">
+      <tbody>
+        <tr>
+          <td style="width: 372px;"><img style="width: 415px; height: 301px;" src="schematics/RLCtransient.svg"><br>
+          </td>
+          <td style="width: 660px;"><img style="width: 619px; height: 355px;" src="photos/RLCtransient.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Wiring Diagram&nbsp;&nbsp; </td>
+          <td>Photograph of the experimental setup.</td>
+        </tr>
+      </tbody>
+    </table>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>The observed waveforms are shown below. It shows that the circuit is
+    under damped. The frequency and damping factor are calculated by fitting the
+    data the a&nbsp; sinusoid multiplied by an exponential function. The damping
+    can be increased by adding more resistance or by increasing the C/L ratio.<br>
+    <table style="width: 935px; height: 636px;" border="1">
+      <tbody>
+        <tr>
+          <td><img src="screenshots/rlctransient.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Screen shot of the transient response of under damped LCR circuit.</td>
+        </tr>
+      </tbody>
+    </table>
+    <span style="font-weight: bold;"></span><br>
+  </body>
+</html>

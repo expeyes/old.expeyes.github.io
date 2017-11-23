@@ -1,16 +1,151 @@
-﻿<h2 id="schematic">Schematic</h2>
-<hr>
-<p><img src="images/RCsteadystate.png" alt=""><img src="images/RLsteadystate.png" alt=""></p>
-<p>RC circuit  and RL circuit</p>
-<p><img src="images/RLCsteadystate.png" alt=""></p><p>RLC circuit</p>
-
-<ul>
-<li>The objective is to apply an AC voltage to a series RC, RL or RLC circuit
-to study the amplitude and phase across the circuit elements as a function of frequency. </li>
-
-<li>The reactance values of Capacitors and Inductors change with frequency.</li>
-<li>In the case of RLC circuit, resonance occurs When XL = Xc, and voltage across LC becomes early zero(not exactly zero because of the resistance of the Inductor</li>
-<li> Connect A3 to the junction of L and C to monitor the voltages across them.
-To observe series resonance, Choose C = 1uF and L = 10 mH. The frequency to around 1600 Hz, adjust frequency to make the phase difference
-across LC almost to zero.</li>
-</ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../../css/menu.css">
+    <title>RLC steady state response</title>
+  </head>
+  <body> <a href="../../index.html"><img src="../../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../../design.html"> <span>Design</span></a></li>
+        <li><a href="../../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../../software.html"> <span>Software</span></a></li>
+        <li><a href="../../android.html"> <span>Android</span></a></li>
+        <li><a href="../../python.html"> <span>python</span></a></li>
+        <li><a href="../../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../../people.html"> <span>People</span></a></li>
+        <li><a href="../../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <br>
+    <span style="font-weight: bold;">Steady state response of RLC circuits</span><br>
+    <br>
+    In this section, we measure the amplitude and phases of voltages and
+    currents across Resistors, Capacitors and Inductors when an AC voltage is
+    applied. Three separate cases will be explored; Series RC circuit, RL
+    circuit and RLC circuit. The resonance of LC circuit is explored.<br>
+    <br>
+    <span style="font-weight: bold;">AC voltage applied to a series RC circuit</span><br>
+    <span style="color: #0a0a0a;"></span><br>
+    <table style="width: 1106px; height: 369px;" cellpadding="4" cellspacing="4"
+      border="0">
+      <tbody>
+        <tr>
+          <td style="width: 372px;"><img style="width: 415px; height: 301px;" src="schematics/RCsteadystate.svg"><br>
+          </td>
+          <td style="width: 660px;"><img style="width: 619px; height: 355px;" src="photos/RCsteadystate.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Wiring Diagram&nbsp;&nbsp; </td>
+          <td>Photograph of the experimental setup.</td>
+        </tr>
+      </tbody>
+    </table>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>The observed waveforms are shown below. The green trace is the voltage
+    across the resistor. Since the current and voltage are in phase across a
+    resistor, this trace represents the phase of current. It can be seen that it
+    is ahead of the red trace (voltage across C) by 90 degree, as expected. The
+    phase difference of voltage waveforms across the capacitor is given by
+    atan(Zc/R). The measured value is 45 degree and the expected value for R=1k,
+    C = 1uF and f = 150 Hz is 46.7 degree. To get them matching, we need to use
+    the actual values of the resistance and capacitance in the calculations, not
+    the nominal values printed on them.<br>
+    <table style="width: 935px; height: 636px;" border="1">
+      <tbody>
+        <tr>
+          <td><img src="screenshots/rc-steadystate.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Screen shot of the voltages in series RC circuit</td>
+        </tr>
+      </tbody>
+    </table>
+    <span style="font-weight: bold;"></span><br>
+    <br>
+    <span style="font-weight: bold;">AC voltage applied to a series RL circuit</span><br>
+    <span style="color: #0a0a0a;"></span><br>
+    <table style="width: 1106px; height: 369px;" cellpadding="4" cellspacing="4"
+      border="0">
+      <tbody>
+        <tr>
+          <td style="width: 372px;"><img style="width: 415px; height: 301px;" src="schematics/RLsteadystate.svg"><br>
+          </td>
+          <td style="width: 660px;"><img style="width: 619px; height: 355px;" src="photos/RLsteadystate.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Wiring Diagram&nbsp;&nbsp; </td>
+          <td>Photograph of the experimental setup.</td>
+        </tr>
+      </tbody>
+    </table>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    The observed waveforms are shown below.&nbsp; The phase difference of
+    voltage waveforms across the capacitor is given by atan(Zl/R). The measured
+    value is 10.7 degree R=1k, L = 10mH and f = 3000 Hz, in agreement with
+    calculated value. <br>
+    <table style="width: 935px; height: 636px;" border="1">
+      <tbody>
+        <tr>
+          <td><img src="screenshots/rl-steadystate.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Screen shot of the voltages in series RC circuit</td>
+        </tr>
+      </tbody>
+    </table>
+    <span style="font-weight: bold;"><br>
+      <br>
+      AC voltage applied to a series RLC circuit, explore Resonance Condition</span><br>
+    <br>
+    In this case both the Inductor and capacitor are present. The resonant
+    frequency is calculated and the input frequency is set at that value. The
+    frequency is then adjusted to make the phase difference of voltage across LC
+    zero. The voltage across LC does not go to zero due to the 20 Ohm resistance
+    of the inductor coil. <br>
+    <span style="color: #0a0a0a;"></span><br>
+    <table style="width: 1106px; height: 369px;" cellpadding="4" cellspacing="4"
+      border="0">
+      <tbody>
+        <tr>
+          <td style="width: 372px;"><img style="width: 415px; height: 301px;" src="schematics/RLCsteadystate.svg"><br>
+          </td>
+          <td style="width: 660px;"><img style="width: 619px; height: 355px;" src="photos/RLCsteadystate.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Wiring Diagram&nbsp;&nbsp; </td>
+          <td>Photograph of the experimental setup.</td>
+        </tr>
+      </tbody>
+    </table>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    The RED trace is the voltage across LC at resonance. The individual voltage
+    across L and C are also shown. It can be seen that the total volatge is
+    going to zero because the voltage across each element is equal and out of
+    phase, so they add to zero.<br>
+    <table style="width: 935px; height: 636px;" border="1">
+      <tbody>
+        <tr>
+          <td><img src="screenshots/rlc-steadystate.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Screen shot of the voltages in series RLC circuit, at resonance.</td>
+        </tr>
+      </tbody>
+    </table>
+    <span style="font-weight: bold;"></span><br>
+    <br>
+    <br>
+  </body>
+</html>

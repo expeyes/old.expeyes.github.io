@@ -1,14 +1,70 @@
-﻿<h2 id="schematic">Schematic</h2>
-<hr>
-<p><img src="images/RLtransient.png" alt=""></p>
-<h2 id="instructions">Instructions</h2>
-<hr>
-<ul>
-<li>Make connections as shown in the figure.</li>
-<li>Pressing "0 to 5V STEP" or "5 to 0V STEP" switches OD1
-and captures the resulting voltage variation at A1</li>
-<li>"Calculate R/L" fits the data with V = Vo exp(-tR/L)</li>
-<li>Repeat with different R and L values.</li>
-</ul>
-<p><strong>Note that the 5 -&gt; 0 volt step results in a negative voltage
-across the inductor, due to the back EMF.</strong></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../../css/menu.css">
+    <title>RL transient response</title>
+  </head>
+  <body> <a href="../../index.html"><img src="../../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../../design.html"> <span>Design</span></a></li>
+        <li><a href="../../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../../software.html"> <span>Software</span></a></li>
+        <li><a href="../../android.html"> <span>Android</span></a></li>
+        <li><a href="../../python.html"> <span>python</span></a></li>
+        <li><a href="../../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../../people.html"> <span>People</span></a></li>
+        <li><a href="../../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <br>
+    <span style="font-weight: bold;">Transient response of RL circuit</span><br>
+    <br>
+    A voltage step is applied to a series RL circuit and the resulting voltage
+    variation across the capacitor is captured and analyzed.&nbsp; <br>
+    <br>
+    <span style="color: #0a0a0a;"></span><br>
+    <table style="width: 1106px; height: 369px;" cellpadding="4" cellspacing="4"
+      border="0">
+      <tbody>
+        <tr>
+          <td style="width: 372px;"><img style="width: 415px; height: 301px;" src="schematics/RLtransient.svg"><br>
+          </td>
+          <td style="width: 660px;"><img style="width: 619px; height: 355px;" src="photos/RLtransient.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Wiring Diagram&nbsp;&nbsp; </td>
+          <td>Photograph of the experimental setup.</td>
+        </tr>
+      </tbody>
+    </table>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <div style="text-align: justify;">The voltage steps are generated on OD1 by
+      clicking on the buttons on the GUI. The observed waveforms are shown
+      below, showing the voltage variation across the inductor in each case. It
+      can be observed that when a 5 to 0 volt step is applied, the polarity of
+      the voltage across the inductor is reversed and the voltage goes to
+      negative immediately. After that the voltage reduces exponentially,
+      driving a current through the resistor. The resulting wave form is fitted
+      with V = Vo x exp(R/L * t) to extract the R/L value. The value of inductor
+      is calculated from&nbsp; that.</div>
+    <br>
+    <table style="width: 935px; height: 636px;" border="1">
+      <tbody>
+        <tr>
+          <td><img src="screenshots/rltransient.png"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Screen shot of the voltage across an inductor.</td>
+        </tr>
+      </tbody>
+    </table>
+    <span style="font-weight: bold;"></span><br>
+  </body>
+</html>
