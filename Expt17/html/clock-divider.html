@@ -1,13 +1,58 @@
-﻿<h2 id="schematic">Schematic</h2>
-<hr>
-<p><img src="images/clock-divider.png" alt=""></p>
-<ul>
-<li>In this experiment, we use ExpEYES as a square wave generator and as an Oscilloscope</li>
-</ul>
-<h2 id="instructions">Instructions</h2>
-<hr>
-<ul>
-<li>Make the connections, on a breadboard.</li>
-<li>Set SQ1 to 1000 Hz, watch both A1 and A2</li>
-<li>Change the frequency.</li>
-</ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../../css/menu.css">
+    <title>RL transient response</title>
+  </head>
+  <body> <a href="../../index.html"><img src="../../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../../design.html"> <span>Design</span></a></li>
+        <li><a href="../../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../../software.html"> <span>Software</span></a></li>
+        <li><a href="../../android.html"> <span>Android</span></a></li>
+        <li><a href="../../python.html"> <span>python</span></a></li>
+        <li><a href="../../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../../people.html"> <span>People</span></a></li>
+        <li><a href="../../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <span style="font-weight: bold;"><br>
+      Clock divider circuit, using D flipflop</span><br>
+    <br>
+    A square wave is given to the clock input of the 74LS74 flipflop. The Q-bar
+    output is connected to the D input. Clear and Preset inputs should be held
+    HIGH. Every rising edge toggles the output, but nothing happens at the
+    falling edge.<br>
+    <span style="color: #0a0a0a;"></span><br>
+    <table style="width: 1106px; height: 369px;" cellpadding="4" cellspacing="4"
+      border="0">
+      <tbody>
+        <tr>
+          <td style="width: 372px;"><img style="width: 415px; height: 301px;" src="schematics/clock-divider.svg"><br>
+          </td>
+          <td style="width: 660px;"><img style="width: 619px; height: 355px;" src="photos/clock-divider.jpg"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>Wiring Diagram&nbsp;&nbsp; </td>
+          <td>Photograph of the experimental setup.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <span style="font-weight: bold;"></span><img src="screenshots/clock-divider.png"><br>
+    <br>
+    <br>
+    The duty cycle of the output waveform will be 50% irrespective of the duty
+    cycle of the input waveform, as shown below.<br>
+    <br>
+    <img alt="" src="screenshots/clock-divider-dcycle.png"><br>
+    <br>
+    <br>
+  </body>
+</html>
