@@ -1,24 +1,42 @@
-﻿<h2 id="schematic">Schematic</h2>
-<hr>
-<p><img src="images/pt100.png" alt=""></p>
-<p>PT100 is an RTD sensor, it's resistance changes with temperature. It is 100 Ohms at zero degree celcius.
-The resistance is measured by connecting PT100 to a Constant Current Source. The voltage drop is proportional to the resistance.
-It is measured after some amplification, since the voltage is less than200 mV even at 100 degC.
-</p>
-<hr>
-<ul>
-<li>Connect the PT100 sensor from the CCS to Ground. CCS = 1.1mA nominal</li>
-<li>Connect CCS to A3, for monitoring</li>
-<li>Connect a gain resistor Rg=1K, Gain = 1 + 10k/Rg = 1 + 10/1 = 11</li>
-<li>Select the Total Time and time between measurements</li>
-<li>Select the Minimum and Maximum limits for Temperatures to be measured</li>
-</ul>
-
-<hr>
-<p>For better accuracy, calibrate CCS value, gain and Offset of A3. </p>
-<ul>
-<li>Connect a 1k resistor from CCS to Ground. Measure the voltage to calculate the exact value of CCS</li>
-<li>Connect Rg and measure A3, to get the Offset error at that gain </li>
-<li>Connect PT100. Meaasure A3 with and without Rg, to calculate the gain on A3 </li>
-<li>Enter the calculated values, to get better accuracy</li>
-</ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../../css/menu.css">
+    <title>Cooling curve, PT100</title>
+  </head>
+  <body> <a href="../../index.html"><img src="../../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../../design.html"> <span>Design</span></a></li>
+        <li><a href="../../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../../software.html"> <span>Software</span></a></li>
+        <li><a href="../../android.html"> <span>Android</span></a></li>
+        <li><a href="../../python.html"> <span>python</span></a></li>
+        <li><a href="../../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../../people.html"> <span>People</span></a></li>
+        <li><a href="../../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h4>Cooling Curve, temperature measurement using PT100 sensor</h4>
+    <p>The resistance of a platinum resistor element changes with temperature.
+      The industry standard PT100 sensor has a resistance of 100 Ohms at zero
+      degree Celsius. The sensor is connected from the 1.1 mA constant current
+      source to ground. The potential across PT100 is measured using A3, with
+      amplification decided by the resistor Rg.</p>
+    <img style="width: 392px; height: 343px;" alt="" src="schematics/pt100.svg">&nbsp;&nbsp;&nbsp;
+    <img style="width: 530px; height: 343px;" alt="" src="photos/pt100.jpg"><br>
+    <br>
+    <br>
+    A screenshot of the GUI used for plotting the temperature is shown below.<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </body>
+</html>
