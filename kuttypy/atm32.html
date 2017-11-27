@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <title>atmega32</title>
+  </head>
+  <body> <a href="index.html"><img src="../images/eyes-logo.png" height="100" width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <div style="text-align: center;">
+      <h3 style="text-align: left;"><span style="font-family: Helvetica,Arial,sans-serif;">Hardware
+          of KuttyPy<br>
+        </span></h3>
+      <span style="font-family: Helvetica,Arial,sans-serif;"></span><span style="font-family: Helvetica,Arial,sans-serif;"></span>
+      <p style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;"><span
+            style="font-family: Helvetica,Arial,sans-serif;">The board provides
+            32 terminals that are organized in to 4 groups, each having 8
+            terminals, namely A, B,C and D.&nbsp; </span>The individual
+          terminals are marked as PA0 -- PA7 for port A, PB0 -- PB7 for port B
+          etc. They can be controlled/monitored as a group or as individual
+          pins. Each pin of the port can be configured as output or input, by
+          setting/clearing the corresponding bit in the Data Direction
+          Register.&nbsp; For complete details refer to the <a href="http://www.atmel.com/images/doc2503.pdf">ATMega32
+            datasheet</a>.<br>
+        </span></p>
+      <table style="width: 1174px; height: 292px;" cellpadding="4" cellspacing="4"
+        border="0">
+        <tbody>
+          <tr>
+            <td style="width: 506.65px;"><img style="width: 453px; height: 272px;"
+                alt="" src="file:///home/ajith/GIT/expeyes.github.io/kuttypy/pics/porta.png"></td>
+            <td style="width: 100%; text-align: left; vertical-align: top;">To
+              use the terminals PA0 to PA7, you need to access the registers
+              DDRA, PORTA and PINA. Each pin can be made to act as an input or
+              output<br>
+              <br>
+              DDRA : Data direction register. Writing a 1 to any bit makes the
+              corresponding pin an output. For example&nbsp; <span style="font-weight: bold;">setReg</span>(DDRA,
+              255) makes all the pins as output.<br>
+              <br>
+              PORTA: This is the data for the pins configured as outputs.
+              Writing a 1 to a bit makes the corresponding pin HIGH. For pins
+              configured as inputs writing a 1 connects the pin to the supply
+              through an internal 10k resistor.<br>
+              <br>
+              PINA: This is for reading the status of the input pins. data = <span
+                style="font-weight: bold;">getReg</span>(PINA) gets you the
+              status of voltage levels present on PA0 to PA7<br>
+              <br>
+              The other ports can be used in a similar manner.</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <div style="text-align: left;">In addition to the simple I/O ports, the
+        hardware provides features like Analog to Digital Converters,
+        Timer/Counters etc.<br>
+        <br>
+        <span style="font-weight: bold;">Analog to Digital Converter</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enabling the ADC of ATmega32 makes PA0 to
+        PA7 to accept analog signals and convert them into digital data. The
+        registers to control are the ADC status and control register and the ADC
+        multiplex register.<br>
+        <img style="width: 741px; height: 123px;" alt="" src="pics/adcsra.png"><br>
+        <img style="width: 751px; height: 122px;" alt="" src="pics/admux.png"><br>
+        The following lines code explains the usage of the ADC.&nbsp; For more
+        details, refer to the Atmega32 datasheet.<br>
+        <br>
+        ADSP2 = 2<br>
+        REFS1 = 7<br>
+        REFS0 = 6<br>
+        ADLAR = 5<br>
+        ADEN&nbsp;&nbsp; = 7<br>
+        ADIF&nbsp;&nbsp; = 4<br>
+        ADSC&nbsp;&nbsp; = 6<br>
+        <br>
+        setReg(DDRA,0)<br>
+        setReg(ADMUX, (1 &lt;&lt; ADLAR) |(1 &lt;&lt; REFS1) | (1 &lt;&lt;
+        REFS0) | 0)<br>
+        setReg(ADCSRA, 1 &lt;&lt; ADEN | (1 &lt;&lt; ADSC) | 1 &lt;&lt; ADSP2)</div>
+      <div style="text-align: left;">print getReg(ADCH)<br>
+        <br>
+        <span style="font-weight: bold;">Timer/Counters</span><br>
+        &nbsp;The timer/counters along with set point registers and comparators
+        are very powerful tools for implementing Pulse Width Modulated
+        waveforms, frequency counters etc. The processor clock is given to a
+        counter, after selected pre-scaling, and the counter is compared with
+        registers that can be set by the user.<br>
+        <img style="width: 495px; height: 342px;" alt="" src="pics/timer-counter0.png"><br>
+        <br>
+        The control registers of the Timer/Counter0 is shown below.<br>
+        <img style="width: 706px; height: 121px;" alt="" src="pics/TCCR0.png"><br>
+        <img style="width: 709px; height: 120px;" alt="" src="pics/ocr0.png"><br>
+        <br>
+        The code given below generates a PWM signals on pin PB3<br>
+        <br>
+        setReg(DDRB,255)<br>
+        WGM01=3<br>
+        WGM00=6<br>
+        COM01=5<br>
+        setReg( TCCR0 , (1 &lt;&lt; WGM01) | (1 &lt;&lt; WGM00) | (1 &lt;&lt;
+        COM01) | 1 )<br>
+        setReg(OCR0 , 64)&nbsp;&nbsp;&nbsp; # 256/4 = 64, means 25% duty cycle<br>
+        <br>
+        By changing the value of OCR0, we can change the brightness of an LED
+        connected to PB3.<br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+  </body>
+</html>

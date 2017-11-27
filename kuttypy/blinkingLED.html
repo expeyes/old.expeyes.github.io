@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <title>kuttyPy</title>
+  </head>
+  <body> <a href="../../index.html"><img src="../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../../design.html"> <span>Design</span></a></li>
+        <li><a href="../../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../../software.html"> <span>Software</span></a></li>
+        <li><a href="../../android.html"> <span>Android</span></a></li>
+        <li><a href="../../python.html"> <span>python</span></a></li>
+        <li><a href="../../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../../people.html"> <span>People</span></a></li>
+        <li><a href="../../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <div style="text-align: center;"><br>
+      <div style="text-align: left;"><span style="font-weight: bold;"><span style="font-family: Helvetica,Arial,sans-serif;">Blinking
+            LEDs</span></span></div>
+      <span style="font-family: Helvetica,Arial,sans-serif;"> </span>
+      <p style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;">The
+          simplest thing to start with is to control LEDs connected to any of
+          the terminals. Connect an LED from PB0 to Ground with 5k resistor in
+          series, for current limiting. The LED should blink when you run the
+          Python program <a href="file:///home/ajith/GIT/expeyes.github.io/kuttypy/code/blink.py">blink.py</a>.</span></p>
+      <p style="text-align: justify;"><span style="font-family: Helvetica,Arial,sans-serif;">setReg(DDRD,255)<br>
+          while 1:<br>
+          &nbsp;&nbsp;&nbsp; setReg(PORTD, 255)<br>
+          &nbsp;&nbsp;&nbsp; time.sleep(1)<br>
+          &nbsp;&nbsp;&nbsp; setReg(PORTD, 0)<br>
+          &nbsp;&nbsp;&nbsp; time.sleep(1)</span></p>
+      <div style="text-align: left;">Let us examine the code line by line:</div>
+      <div style="text-align: left;"><span style="font-family: Helvetica,Arial,sans-serif;">
+          <span style="font-weight: bold;">from kuttyPy import *</span><br>
+          This line imports the kuttyPy module ( kuttyPy.py should be in your
+          working directory). This module gives you&nbsp; functions that can
+          read/write the Registers of the micro-controller connected to the USB
+          port.&nbsp; This line also searches for the hardware on the available
+          USB ports. If nothing found, the program is terminated.<br>
+          <br>
+          <span style="font-weight: bold;">setReg(DDRB,255)</span><br>
+          DDRB is an 8bit Register that decides the direction of the terminals
+          PB0 -- PB7. If a bit is 1, the corresponding terminal becomes an
+          output. If it is zero, the terminal becomes an input. DDR stands for
+          Data Direction Register. The last letter represents the port, for
+          example DDRA decides the direction of port A.<br>
+          <br>
+          time.sleep(1)&nbsp;&nbsp; , for a one second wait<br>
+          <br>
+          <span style="font-weight: bold;">setReg(PORTB,255)</span><br>
+          PORTB is an 8bit Register where you set the output level of the
+          terminals PB0 -- PB7. If a bit is 1, the voltage at the corresponding
+          terminal becomes HIGH, else it becomes LOW. Here we are making all the
+          terminals HIGH, means LED conected to any of them will glow.&nbsp; In
+          a similar manner you can use PORTA, PORTC and PORTD.<br>
+          <br>
+          <span style="font-weight: bold;">setReg(PORTB, 0)</span><br>
+          As explained above, PB0 to PB7 will be set to LOW.<br>
+          <br>
+          Running this loop makes the LEDs connected to any of the terminals PB0
+          to PB7 will blink. The frequency will be decided by the delay
+          specified in time.sleep()<br>
+        </span><br>
+        <br>
+        <br>
+      </div>
+    </div>
+  </body>
+</html>

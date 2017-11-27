@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <title>pwm0</title>
+  </head>
+  <body> <a href="../../index.html"><img src="../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../../design.html"> <span>Design</span></a></li>
+        <li><a href="../../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../../software.html"> <span>Software</span></a></li>
+        <li><a href="../../android.html"> <span>Android</span></a></li>
+        <li><a href="../../python.html"> <span>python</span></a></li>
+        <li><a href="../../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../../people.html"> <span>People</span></a></li>
+        <li><a href="../../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <div style="text-align: center;"><br>
+      <div style="text-align: left;"><span style="font-weight: bold;"><span style="font-family: Helvetica,Arial,sans-serif;">Pulse
+            Width Modulated waveform using Timer/Counter0<br>
+          </span></span><span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;&nbsp;&nbsp;
+          The bits of the two control registers TCCR0 and OCR0 are manipulated
+          to generate the PWM. PB3 should be set as output by setting the
+          corresponding bit in DDRB<br>
+        </span><span style="font-weight: bold;"><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+          </span></span><span style="font-family: Helvetica,Arial,sans-serif;">setReg(DDRB,
+          8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # set PB3 as output<br>
+          WGM01=3<br>
+          WGM00=6<br>
+          COM01=5<br>
+          setReg( TCCR0 , (1 &lt;&lt; WGM01) | (1 &lt;&lt; WGM00) | (1 &lt;&lt;
+          COM01)&nbsp; |&nbsp; 1)<br>
+          setReg(OCR0 ,&nbsp; 64)</span><span style="font-weight: bold;"><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+            <br>
+          </span></span></div>
+    </div>
+  </body>
+</html>
