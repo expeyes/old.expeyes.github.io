@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <title>install on windows</title>
+  </head>
+  <body> <a href="index.html"><img src="images/eyes-logo.png" height="100" width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../design.html"> <span>Design</span></a></li>
+        <li><a href="../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../software.html"> <span>Software</span></a></li>
+        <li><a href="../android.html"> <span>Android</span></a></li>
+        <li><a href="../python.html"> <span>python</span></a></li>
+        <li><a href="../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../people.html"> <span>People</span></a></li>
+        <li><a href="../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    Extract the downloaded .zip file, for example to C:\<br>
+    <br>
+    <ul>
+      <li>Install the Python interpreter by double clicking on <span style="font-weight: bold;">python-2.7.14.amd64.msi
+          </span>(Must enable the Add Python to the Path option, from one of the
+        install screens)</li>
+      <li>Install the USB to Serial driver from the subdirectory <span style="font-weight: bold;">Driver
+          Installation Tool</span> (the files given here are tested on 64 bit
+        windows)</li>
+    </ul>
+    <p>Reboot the computer ( that's the way with MSwin)</p>
+    <p>open a command terminal and use 'pip install ' to install all the .whl
+      files, for example</p>
+    <p>&gt;pip install numpy-1.13.3+mkl-cp27-cp27m-win_amd64.whl</p>
+    <p>You must be change to the subdirectory where the .whl files are</p>
+    <span style="color: #0a0a0a;">From the directory </span><span style="font-weight: bold;">eyes17-3.6.0</span>,
+    run the file main.py<br>
+    <br>
+    &gt; python main.py<br>
+  </body>
+</html>
