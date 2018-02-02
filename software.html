@@ -22,19 +22,22 @@
     <h3>ExpEYES-17</h3>
     <p><span style="font-weight: bold;">On Debian/Ubuntu:</span></p>
     <blockquote>
-      <p>On Ubuntu, 14.04 or later,&nbsp; download and install <a href="Documents/eyes17-3.8.0.deb">eyes17-3.8.0.deb</a>
+      <p>On Ubuntu, 14.04 or later,&nbsp; download and install <a href="Documents/eyes17-3.9.0.deb">eyes17-3.9.0.deb</a>
         using the command</p>
       <p>$ sudo gdebi eyes17-3.8.0.deb</p>
       <p>The PC should be connected to Internet during this, since eyes17
         depends on other packages like python-serial, numpy, scypy,&nbsp; PyQt
         and python-pyqtgraph. This will only install software for ExpEYES-17,
-        not for earlier version.&nbsp; <a href="ubuntu-pyserial-error.html">Note
-          for Ubuntu 16.04 users</a></p>
+        not for earlier version.</p>
+      <p>For Ubuntu 18.04 onwards (it is already a part of the pre-release
+        images), you may install it using</p>
+      <p>$sudo apt install eyes17<br>
+      </p>
     </blockquote>
     <p><span style="font-weight: bold;">On Other GNU/Linux Distributions</span></p>
     <blockquote>
-      <p> Download <a href="Documents/eyes17-3.8.0.zip">eyes17.zip</a> , unzip
-        it and run</p>
+      <p> Download <a href="Documents/eyes17.zip">eyes17.zip</a> , unzip it and
+        run</p>
       <p>$ sudo python main.py</p>
       You need to install all the required python modules. To use the device as
       a normal user, <a href="Code/postinst.sh">download this file</a> to set
