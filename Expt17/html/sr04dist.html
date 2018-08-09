@@ -1,17 +1,82 @@
-﻿<h2 id="schematic">Schematic</h2>
-<hr>
-<p><img src="images/sr04-dist.png" alt=""></p>
-<ul>
-<li>SR04 sensor has a pair of 40kHz Piezo discs along with some circuitry.</li>
-<li>Applying a voltage pulse to the Trigger pin generates a burst of 40kHz sound
-from the transmitter disc.</li>
-<li>If the sound burst gets reflected from a surface and falls on the receiver disc, it generates an electrical signal.</li>
-<li>The time interval between these two pulses is measured.</li>
-<li>The distance to the surface is calculated by assuming the velocity of sound in air.</li>
-</ul>
-<h2 id="instructions">Instructions</h2>
-<hr>
-<ul>
-<li>Make the connections and keep a flat object in front of the sensor.</li>
-<li>Press the <strong>START</strong> button to record the distance, as a function of time.</li>
-</ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../../css/menu.css">
+    <title>Diode IV</title>
+  </head>
+  <body> <a href="../../index.html"><img src="../../images/eyes-logo.png" height="100"
+        width="420"></a>
+    <div id="mynb">
+      <ul>
+        <li><a href="../../Expt17/expts.html"><span>Experiments</span></a></li>
+        <li><a href="../../design.html"> <span>Design</span></a></li>
+        <li><a href="../../hardware.html"> <span>How to Buy</span></a></li>
+        <li><a href="../../software.html"> <span>Software</span></a></li>
+        <li><a href="../../android.html"> <span>Android</span></a></li>
+        <li><a href="../../python.html"> <span>python</span></a></li>
+        <li><a href="../../microhope.html"><span>MicroHOPE</span></a></li>
+        <li><a href="../../people.html"> <span>People</span></a></li>
+        <li><a href="../../news.html"><span>News</span></a></li>
+      </ul>
+    </div>
+    <h4>Distance measurement using HY-SR04 Piezo sensor</h4>
+    <table style="width: 1070px; height: 210px;" border="1">
+      <tbody>
+        <tr>
+          <td>HY-SR04 is a widely available ultrasound ranging module. It
+            consists of two 40 kHz Piezo crystals, one acts as a transmitter and
+            other as a receiver, and some electronics circuitry to measure the
+            time interval between a burst of sound transmitted and the echo
+            received.<br>
+            The four pins are the power supply, ground, trigger and Echo. This
+            module can be connected to ExpEYES-17&nbsp; as shown in the
+            schematic, to measure distance between the module and the reflecting
+            surface, with an error less than 3mm. This can be used to design
+            several experiments in mechanics.<br>
+          </td>
+          <td><img alt="" src="photos/sr04.jpg"><br>
+          </td>
+          <td><img alt="" src="photos/sr04-dist.png"><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h4>The Mass and Spring problem</h4>
+    <p>When a mass suspended on a spring is made to oscillate, the period of
+      oscillation is given by&nbsp; T = 2 * pi * sqrt( m/k), where m is the mass
+      and k is the spring constant. We can measure the period of oscillation by
+      measuring the distance to the moving mass as a function of time. The
+      distance versus time graph is fitted with a sine function to calculate the
+      frequency. The photograph below shows a metal plate suspended on a spring
+      and the SR04 facing it from the bottom. The distance to the oscillating
+      plate is measured for 5 seconds and the data is fitted to a sine function.</p>
+    <img style="width: 410px; height: 350px;" alt="" src="photos/massAndSpring.jpg">
+    A video of the experiment is <a href="https://www.youtube.com/watch?v=FhCYhDiIRuQ">HERE</a>.<br>
+    <br>
+    <br>
+    <h4>Simple Pendulum</h4>
+    &nbsp;&nbsp;&nbsp;&nbsp; The period of oscillations of a pendulum also can
+    be measured using SR04 connected to ExpEYES. The figure shows a pendulum
+    with a rectangular bob, but one can use a spherical bob with a piece of
+    paper (to provide a flat reflecting surface) pasted to it. The measured
+    frequency is 1.05 Hz for a pendulum having a length of 22cm. One can
+    calculate the value of acceleration due to gravity from this data.<br>
+    <br>
+    <img style="width: 490px; height: 283px;" alt="" src="photos/pendulum.jpg">
+    A video is <a href="https://www.youtube.com/watch?v=fOTfMsKiXBo">HERE</a>.<br>
+    <br>
+    <h4>Free Fall, Displacement as a function of Time </h4>
+    It is possible to measure the distance to a body falling under gravity. The
+    value of 'g' can be calculated by fitting the data with the polynomial<br>
+    S(t)= a * t^2 + b * t + c<br>
+    'g' is given by 2*a<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p><br>
+    </p>
+  </body>
+</html>
