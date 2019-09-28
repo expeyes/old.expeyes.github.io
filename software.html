@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" type="text/css" href="css/menu.css">
     <title>software</title>
   </head>
-  <body> <a href="index.html"><img src="images/eyes-logo.png" height="100" width="420"></a>
+  <body> <a href="index.html"><img src="images/eyes-logo.png" width="420" height="100"></a>
     <div id="mynb">
       <ul>
         <li><a href="../Expt17/expts.html"><span>Experiments</span></a></li>
@@ -24,15 +24,17 @@
     <blockquote>
       <p>On Ubuntu, 16.04 or later,&nbsp; download and install <a href="Documents/eyes17-4.0.2.deb">eyes17-4.0.2.deb</a>
         using the command</p>
-      <p>$ sudo gdebi eyes17-3.8.0.deb</p>
+      <p>$ sudo gdebi eyes17-4.0.2.deb</p>
       <p>The PC should be connected to Internet during this, since eyes17
         depends on other packages like python-serial, numpy, scypy,&nbsp; PyQt
         and python-pyqtgraph. This will only install software for ExpEYES-17,
         not for earlier version.</p>
-      <p>For Ubuntu 18.04 onwards (it is already a part of the pre-release
-        images), you may install it using</p>
-      <p>$sudo apt install eyes17<br>
-      </p>
+      <p>For Ubuntu 18.04 and above</p>
+      <p>$ sudo apt install eyes17</p>
+      <p>Note: The version in the repository of ubuntu18.04 has a bug in the
+        calibration loading. It is better to download <a href="Documents/eyes17-4.2.0.deb">eyes17-4.2.0</a>
+        and do a</p>
+      <p>$ sudo gdebi eyes17-4.2.0</p>
     </blockquote>
     <p><span style="font-weight: bold;">On Other GNU/Linux Distributions</span></p>
     <blockquote>
