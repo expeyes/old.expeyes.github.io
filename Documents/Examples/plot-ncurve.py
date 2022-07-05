@@ -2,7 +2,7 @@
 
 from pylab import  *
 
-n = 2			
+n = 20		
 t = linspace(0, 1, 3000)
 
 x = cos(2*pi*n*t) + cos(2*pi*t) -1
